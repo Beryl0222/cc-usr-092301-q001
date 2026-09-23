@@ -1,5 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "趣味赛事运行系统事件信封",
   "type": "object",
   "required": [
     "event_id",
@@ -13,16 +14,80 @@
       "type": "string"
     },
     "kind": {
-      "type": "string"
+      "$ref": "#/$defs/kind"
     },
     "occurred_at": {
-      "type": "string"
+      "type": "string",
+      "format": "date-time",
+      "description": "事件实际发生时刻，必须带时区偏移"
     },
     "subject_id": {
-      "type": "string"
+      "type": "string",
+      "description": "事件流标识：space/catalog/session/zoneops/incident/consent/media/board/experience:<id>"
     },
     "version": {
-      "type": "integer"
+      "type": "integer",
+      "minimum": 1,
+      "description": "同一 subject 流内严格连续递增"
+    },
+    "command_id": {
+      "type": "string",
+      "description": "命令幂等键；同一 command_id 重放不得产生第二个事件"
+    },
+    "actor_id": {
+      "type": "string"
+    },
+    "data": {
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "$defs": {
+    "kind": {
+      "type": "string",
+      "description": "事件类型即系统的业务词表，新增能力必须先在此登记",
+      "enum": [
+        "SPACE_VERSION_DRAFTED",
+        "SPACE_VERSION_PUBLISHED",
+        "SPACE_VERSION_RETIRED",
+        "ACTIVITY_REGISTERED",
+        "ACTIVITY_UPDATED",
+        "ACTIVITY_RETIRED",
+        "SESSION_SCHEDULED",
+        "SESSION_FROZEN",
+        "SIGNUP_OPENED",
+        "TEAM_REGISTERED",
+        "REGISTRATION_CANCELLED",
+        "WAITLIST_PROMOTED",
+        "TEAM_CHECKED_IN",
+        "NO_SHOW_CANCELLED",
+        "ADMISSION_TICKETED",
+        "ADMISSION_RELEASED",
+        "SESSION_CHANGE_PUBLISHED",
+        "GROUPS_DRAWN",
+        "MATCH_RESULT_RECORDED",
+        "SESSION_FINISHED",
+        "PRIZE_AWARDED",
+        "ZONE_ACTIVATED",
+        "ZONE_PAUSED",
+        "ZONE_RESUMED",
+        "CROWD_OBSERVED",
+        "INCIDENT_REPORTED",
+        "RESPONDER_ASSIGNED",
+        "INCIDENT_STATUS_CHANGED",
+        "INCIDENT_MEDIA_ADDED",
+        "INCIDENT_MEDIA_ACCESSED",
+        "MINOR_REUNITED",
+        "CONSENT_GRANTED",
+        "CONSENT_WITHDRAWN",
+        "MEDIA_CAPTURED",
+        "MEDIA_PUBLISH_BLOCKED",
+        "MEDIA_TAKEDOWN_REQUESTED",
+        "MEDIA_TAKEN_DOWN",
+        "MERCHANT_TASK_CREATED",
+        "MERCHANT_TASK_STATUS_CHANGED",
+        "EXPERIENCE_SAMPLED"
+      ]
     }
   }
 }
