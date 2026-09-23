@@ -1,0 +1,1498 @@
+[
+  {
+    "event_id": "0923-0001",
+    "kind": "VENUE_VERSION_PUBLISHED",
+    "occurred_at": "2026-09-23T09:00:00+08:00",
+    "subject_id": "vv-L1-0923",
+    "version": 1,
+    "payload": {
+      "venue_version_id": "vv-L1-0923",
+      "store_id": "store-7",
+      "floor": "L1",
+      "zones": [
+        {
+          "zone_id": "z-atrium",
+          "name": "主中庭",
+          "role": "playing",
+          "competitor_capacity": 8,
+          "spectator_capacity": 20,
+          "adjacent_zone_ids": [
+            "z-neighbor"
+          ]
+        },
+        {
+          "zone_id": "z-neighbor",
+          "name": "北侧空地",
+          "role": "playing",
+          "competitor_capacity": 8,
+          "spectator_capacity": 20,
+          "adjacent_zone_ids": [
+            "z-atrium"
+          ]
+        },
+        {
+          "zone_id": "z-egress",
+          "name": "消防通道",
+          "role": "egress",
+          "competitor_capacity": 0,
+          "spectator_capacity": 0,
+          "adjacent_zone_ids": [
+            "z-atrium"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "event_id": "0923-0002",
+    "kind": "GAME_REGISTERED",
+    "occurred_at": "2026-09-23T09:05:00+08:00",
+    "subject_id": "g-beans",
+    "version": 1,
+    "payload": {
+      "game_id": "g-beans",
+      "name": "拼豆速拼",
+      "risk_level": "LOW",
+      "team_size_min": 2,
+      "team_size_max": 2,
+      "age_min": 6,
+      "age_max": 99,
+      "guardian_required": true
+    }
+  },
+  {
+    "event_id": "0923-0003",
+    "kind": "GAME_SCHEDULED",
+    "occurred_at": "2026-09-23T09:10:00+08:00",
+    "subject_id": "s-0923-pm",
+    "version": 1,
+    "payload": {
+      "session_id": "s-0923-pm",
+      "game_id": "g-beans",
+      "venue_version_id": "vv-L1-0923",
+      "zone_ids": [
+        "z-atrium",
+        "z-neighbor",
+        "z-egress"
+      ],
+      "slot_start": "2026-09-23T14:00:00+08:00",
+      "slot_end": "2026-09-23T15:00:00+08:00",
+      "competitor_capacity": 6,
+      "spectator_capacity": 20,
+      "roster_deadline": "2026-09-23T12:00:00+08:00",
+      "late_grace_minutes": 15
+    }
+  },
+  {
+    "event_id": "0923-0004",
+    "kind": "ELIGIBILITY_RULE_SET",
+    "occurred_at": "2026-09-23T10:05:00+08:00",
+    "subject_id": "s-0923-pm",
+    "version": 2,
+    "payload": {
+      "session_id": "s-0923-pm",
+      "rules": [
+        {
+          "type": "AGE_MIN",
+          "value": 6
+        },
+        {
+          "type": "GUARDIAN_FOR_MINORS"
+        },
+        {
+          "type": "HEALTH_DECLARATION"
+        }
+      ]
+    }
+  },
+  {
+    "event_id": "0923-0005",
+    "kind": "TEAM_REGISTERED",
+    "occurred_at": "2026-09-23T10:10:00+08:00",
+    "subject_id": "s-0923-pm",
+    "version": 3,
+    "payload": {
+      "team_id": "t-A",
+      "session_id": "s-0923-pm",
+      "members": [
+        {
+          "member_id": "a-1",
+          "is_minor": false,
+          "guardian_id": null
+        },
+        {
+          "member_id": "a-2",
+          "is_minor": false,
+          "guardian_id": null
+        }
+      ]
+    }
+  },
+  {
+    "event_id": "0923-0006",
+    "kind": "TEAM_REGISTERED",
+    "occurred_at": "2026-09-23T10:11:00+08:00",
+    "subject_id": "s-0923-pm",
+    "version": 4,
+    "payload": {
+      "team_id": "t-B",
+      "session_id": "s-0923-pm",
+      "members": [
+        {
+          "member_id": "b-kid",
+          "is_minor": true,
+          "guardian_id": "g-chen"
+        },
+        {
+          "member_id": "b-dad",
+          "is_minor": false,
+          "guardian_id": null
+        }
+      ]
+    }
+  },
+  {
+    "event_id": "0923-0007",
+    "kind": "TEAM_REGISTERED",
+    "occurred_at": "2026-09-23T10:12:00+08:00",
+    "subject_id": "s-0923-pm",
+    "version": 5,
+    "payload": {
+      "team_id": "t-C",
+      "session_id": "s-0923-pm",
+      "members": [
+        {
+          "member_id": "c-1",
+          "is_minor": false,
+          "guardian_id": null
+        },
+        {
+          "member_id": "c-2",
+          "is_minor": false,
+          "guardian_id": null
+        }
+      ]
+    }
+  },
+  {
+    "event_id": "0923-0008",
+    "kind": "TEAM_REGISTERED",
+    "occurred_at": "2026-09-23T10:13:00+08:00",
+    "subject_id": "s-0923-pm",
+    "version": 6,
+    "payload": {
+      "team_id": "t-D",
+      "session_id": "s-0923-pm",
+      "members": [
+        {
+          "member_id": "d-1",
+          "is_minor": false,
+          "guardian_id": null
+        },
+        {
+          "member_id": "d-2",
+          "is_minor": false,
+          "guardian_id": null
+        }
+      ]
+    }
+  },
+  {
+    "event_id": "0923-0009",
+    "kind": "TEAM_REGISTERED",
+    "occurred_at": "2026-09-23T10:14:00+08:00",
+    "subject_id": "s-0923-pm",
+    "version": 7,
+    "payload": {
+      "team_id": "t-E",
+      "session_id": "s-0923-pm",
+      "members": [
+        {
+          "member_id": "e-1",
+          "is_minor": false,
+          "guardian_id": null
+        },
+        {
+          "member_id": "e-2",
+          "is_minor": false,
+          "guardian_id": null
+        }
+      ]
+    }
+  },
+  {
+    "event_id": "0923-0010",
+    "kind": "REGISTRATION_ACCEPTED",
+    "occurred_at": "2026-09-23T10:40:00+08:00",
+    "subject_id": "s-0923-pm",
+    "version": 8,
+    "payload": {
+      "team_id": "t-A",
+      "session_id": "s-0923-pm"
+    }
+  },
+  {
+    "event_id": "0923-0011",
+    "kind": "REGISTRATION_ACCEPTED",
+    "occurred_at": "2026-09-23T10:40:00+08:00",
+    "subject_id": "s-0923-pm",
+    "version": 9,
+    "payload": {
+      "team_id": "t-B",
+      "session_id": "s-0923-pm"
+    }
+  },
+  {
+    "event_id": "0923-0012",
+    "kind": "REGISTRATION_ACCEPTED",
+    "occurred_at": "2026-09-23T10:40:00+08:00",
+    "subject_id": "s-0923-pm",
+    "version": 10,
+    "payload": {
+      "team_id": "t-C",
+      "session_id": "s-0923-pm"
+    }
+  },
+  {
+    "event_id": "0923-0013",
+    "kind": "WAITLIST_ENTERED",
+    "occurred_at": "2026-09-23T10:41:00+08:00",
+    "subject_id": "s-0923-pm",
+    "version": 11,
+    "payload": {
+      "team_id": "t-D",
+      "session_id": "s-0923-pm",
+      "position": 1
+    }
+  },
+  {
+    "event_id": "0923-0014",
+    "kind": "WAITLIST_ENTERED",
+    "occurred_at": "2026-09-23T10:42:00+08:00",
+    "subject_id": "s-0923-pm",
+    "version": 12,
+    "payload": {
+      "team_id": "t-E",
+      "session_id": "s-0923-pm",
+      "position": 2
+    }
+  },
+  {
+    "event_id": "0923-0015",
+    "kind": "TEAM_CANCELLED",
+    "occurred_at": "2026-09-23T11:00:00+08:00",
+    "subject_id": "s-0923-pm",
+    "version": 13,
+    "payload": {
+      "team_id": "t-A",
+      "session_id": "s-0923-pm",
+      "cancelled_at": "2026-09-23T11:00:00+08:00",
+      "had_checked_in": false
+    }
+  },
+  {
+    "event_id": "0923-0016",
+    "kind": "WAITLIST_PROMOTED",
+    "occurred_at": "2026-09-23T11:01:00+08:00",
+    "subject_id": "s-0923-pm",
+    "version": 14,
+    "payload": {
+      "team_id": "t-D",
+      "session_id": "s-0923-pm",
+      "reason": "TEAM_CANCELLED_BEFORE_DEADLINE"
+    }
+  },
+  {
+    "event_id": "0923-0017",
+    "kind": "ENTRY_SLOT_ASSIGNED",
+    "occurred_at": "2026-09-23T11:20:00+08:00",
+    "subject_id": "s-0923-pm",
+    "version": 15,
+    "payload": {
+      "team_id": "t-B",
+      "session_id": "s-0923-pm",
+      "admit_from": "2026-09-23T13:50:00+08:00",
+      "admit_until": "2026-09-23T14:00:00+08:00"
+    }
+  },
+  {
+    "event_id": "0923-0018",
+    "kind": "ENTRY_SLOT_ASSIGNED",
+    "occurred_at": "2026-09-23T11:20:00+08:00",
+    "subject_id": "s-0923-pm",
+    "version": 16,
+    "payload": {
+      "team_id": "t-C",
+      "session_id": "s-0923-pm",
+      "admit_from": "2026-09-23T13:50:00+08:00",
+      "admit_until": "2026-09-23T14:00:00+08:00"
+    }
+  },
+  {
+    "event_id": "0923-0019",
+    "kind": "ENTRY_SLOT_ASSIGNED",
+    "occurred_at": "2026-09-23T11:20:00+08:00",
+    "subject_id": "s-0923-pm",
+    "version": 17,
+    "payload": {
+      "team_id": "t-D",
+      "session_id": "s-0923-pm",
+      "admit_from": "2026-09-23T14:00:00+08:00",
+      "admit_until": "2026-09-23T14:10:00+08:00"
+    }
+  },
+  {
+    "event_id": "0923-0020",
+    "kind": "PRIZE_DEFINED",
+    "occurred_at": "2026-09-23T13:00:00+08:00",
+    "subject_id": "s-0923-pm",
+    "version": 18,
+    "payload": {
+      "prize_id": "p-part",
+      "session_id": "s-0923-pm",
+      "basis": "PARTICIPATION",
+      "description": "参与徽章"
+    }
+  },
+  {
+    "event_id": "0923-0021",
+    "kind": "PRIZE_DEFINED",
+    "occurred_at": "2026-09-23T13:01:00+08:00",
+    "subject_id": "s-0923-pm",
+    "version": 19,
+    "payload": {
+      "prize_id": "p-rank",
+      "session_id": "s-0923-pm",
+      "basis": "RANK",
+      "description": "冠军券包"
+    }
+  },
+  {
+    "event_id": "0923-0022",
+    "kind": "MERCHANT_TASK_ASSIGNED",
+    "occurred_at": "2026-09-23T13:05:00+08:00",
+    "subject_id": "s-0923-pm",
+    "version": 20,
+    "payload": {
+      "task_id": "mk-1",
+      "merchant_id": "m-noodle",
+      "zone_id": "z-neighbor",
+      "kind": "QUEUE_SNACK",
+      "window_start": "2026-09-23T14:00:00+08:00",
+      "window_end": "2026-09-23T15:00:00+08:00"
+    }
+  },
+  {
+    "event_id": "0923-0023",
+    "kind": "READINESS_CHECK_STARTED",
+    "occurred_at": "2026-09-23T13:10:00+08:00",
+    "subject_id": "s-0923-pm",
+    "version": 21,
+    "payload": {
+      "session_id": "s-0923-pm",
+      "started_at": "2026-09-23T13:10:00+08:00"
+    }
+  },
+  {
+    "event_id": "0923-0024",
+    "kind": "READINESS_ITEM_CONFIRMED",
+    "occurred_at": "2026-09-23T13:12:00+08:00",
+    "subject_id": "s-0923-pm",
+    "version": 22,
+    "payload": {
+      "session_id": "s-0923-pm",
+      "area": "VENUE",
+      "item": "floor_marking",
+      "confirmed_by": "manager-7",
+      "confirmed_at": "2026-09-23T13:12:00+08:00"
+    }
+  },
+  {
+    "event_id": "0923-0025",
+    "kind": "READINESS_ITEM_CONFIRMED",
+    "occurred_at": "2026-09-23T13:13:00+08:00",
+    "subject_id": "s-0923-pm",
+    "version": 23,
+    "payload": {
+      "session_id": "s-0923-pm",
+      "area": "VENUE",
+      "item": "egress_clear",
+      "confirmed_by": "manager-7",
+      "confirmed_at": "2026-09-23T13:13:00+08:00"
+    }
+  },
+  {
+    "event_id": "0923-0026",
+    "kind": "READINESS_ITEM_CONFIRMED",
+    "occurred_at": "2026-09-23T13:14:00+08:00",
+    "subject_id": "s-0923-pm",
+    "version": 24,
+    "payload": {
+      "session_id": "s-0923-pm",
+      "area": "VENUE",
+      "item": "zone_capacity_plate",
+      "confirmed_by": "manager-7",
+      "confirmed_at": "2026-09-23T13:14:00+08:00"
+    }
+  },
+  {
+    "event_id": "0923-0027",
+    "kind": "READINESS_ITEM_CONFIRMED",
+    "occurred_at": "2026-09-23T13:15:00+08:00",
+    "subject_id": "s-0923-pm",
+    "version": 25,
+    "payload": {
+      "session_id": "s-0923-pm",
+      "area": "STAFFING",
+      "item": "referee_assigned",
+      "confirmed_by": "manager-7",
+      "confirmed_at": "2026-09-23T13:15:00+08:00"
+    }
+  },
+  {
+    "event_id": "0923-0028",
+    "kind": "READINESS_ITEM_CONFIRMED",
+    "occurred_at": "2026-09-23T13:16:00+08:00",
+    "subject_id": "s-0923-pm",
+    "version": 26,
+    "payload": {
+      "session_id": "s-0923-pm",
+      "area": "STAFFING",
+      "item": "queue_steward_assigned",
+      "confirmed_by": "manager-7",
+      "confirmed_at": "2026-09-23T13:16:00+08:00"
+    }
+  },
+  {
+    "event_id": "0923-0029",
+    "kind": "READINESS_ITEM_CONFIRMED",
+    "occurred_at": "2026-09-23T13:17:00+08:00",
+    "subject_id": "s-0923-pm",
+    "version": 27,
+    "payload": {
+      "session_id": "s-0923-pm",
+      "area": "STAFFING",
+      "item": "emergency_contact_known",
+      "confirmed_by": "manager-7",
+      "confirmed_at": "2026-09-23T13:17:00+08:00"
+    }
+  },
+  {
+    "event_id": "0923-0030",
+    "kind": "READINESS_ITEM_CONFIRMED",
+    "occurred_at": "2026-09-23T13:18:00+08:00",
+    "subject_id": "s-0923-pm",
+    "version": 28,
+    "payload": {
+      "session_id": "s-0923-pm",
+      "area": "EMERGENCY_PLAN",
+      "item": "injury_flow_drilled",
+      "confirmed_by": "manager-7",
+      "confirmed_at": "2026-09-23T13:18:00+08:00"
+    }
+  },
+  {
+    "event_id": "0923-0031",
+    "kind": "READINESS_ITEM_CONFIRMED",
+    "occurred_at": "2026-09-23T13:19:00+08:00",
+    "subject_id": "s-0923-pm",
+    "version": 29,
+    "payload": {
+      "session_id": "s-0923-pm",
+      "area": "EMERGENCY_PLAN",
+      "item": "minor_lost_flow_drilled",
+      "confirmed_by": "manager-7",
+      "confirmed_at": "2026-09-23T13:19:00+08:00"
+    }
+  },
+  {
+    "event_id": "0923-0032",
+    "kind": "READINESS_ITEM_CONFIRMED",
+    "occurred_at": "2026-09-23T13:20:00+08:00",
+    "subject_id": "s-0923-pm",
+    "version": 30,
+    "payload": {
+      "session_id": "s-0923-pm",
+      "area": "EMERGENCY_PLAN",
+      "item": "media_rule_briefed",
+      "confirmed_by": "manager-7",
+      "confirmed_at": "2026-09-23T13:20:00+08:00"
+    }
+  },
+  {
+    "event_id": "0923-0033",
+    "kind": "PLAN_FROZEN",
+    "occurred_at": "2026-09-23T13:30:00+08:00",
+    "subject_id": "s-0923-pm",
+    "version": 31,
+    "payload": {
+      "session_id": "s-0923-pm",
+      "frozen_at": "2026-09-23T13:30:00+08:00"
+    }
+  },
+  {
+    "event_id": "0923-0034",
+    "kind": "MEDIA_CONSENT_GRANTED",
+    "occurred_at": "2026-09-23T13:35:00+08:00",
+    "subject_id": "s-0923-pm",
+    "version": 32,
+    "payload": {
+      "consent_id": "c-bkid",
+      "member_id": "b-kid",
+      "scope": [
+        "ONSITE_DISPLAY",
+        "PUBLIC_PROMOTION"
+      ],
+      "granted_by": "g-chen",
+      "granted_at": "2026-09-23T13:35:00+08:00"
+    }
+  },
+  {
+    "event_id": "0923-0035",
+    "kind": "MEDIA_CONSENT_GRANTED",
+    "occurred_at": "2026-09-23T13:36:00+08:00",
+    "subject_id": "s-0923-pm",
+    "version": 33,
+    "payload": {
+      "consent_id": "c-c1",
+      "member_id": "c-1",
+      "scope": [
+        "ONSITE_DISPLAY",
+        "PUBLIC_PROMOTION"
+      ],
+      "granted_by": "c-1",
+      "granted_at": "2026-09-23T13:36:00+08:00"
+    }
+  },
+  {
+    "event_id": "0923-0036",
+    "kind": "MERCHANT_TASK_CONFIRMED",
+    "occurred_at": "2026-09-23T13:40:00+08:00",
+    "subject_id": "s-0923-pm",
+    "version": 34,
+    "payload": {
+      "task_id": "mk-1",
+      "merchant_id": "m-noodle",
+      "handled_by": "店长A"
+    }
+  },
+  {
+    "event_id": "0923-0037",
+    "kind": "ZONE_ENTRY_OBSERVED",
+    "occurred_at": "2026-09-23T13:50:00+08:00",
+    "subject_id": "s-0923-pm",
+    "version": 35,
+    "payload": {
+      "zone_id": "z-atrium",
+      "member_id": "spec-0",
+      "audience": "SPECTATOR",
+      "observed_at": "2026-09-23T13:50:00+08:00"
+    }
+  },
+  {
+    "event_id": "0923-0038",
+    "kind": "ZONE_ENTRY_OBSERVED",
+    "occurred_at": "2026-09-23T13:50:00+08:00",
+    "subject_id": "s-0923-pm",
+    "version": 36,
+    "payload": {
+      "zone_id": "z-atrium",
+      "member_id": "spec-1",
+      "audience": "SPECTATOR",
+      "observed_at": "2026-09-23T13:50:00+08:00"
+    }
+  },
+  {
+    "event_id": "0923-0039",
+    "kind": "ZONE_ENTRY_OBSERVED",
+    "occurred_at": "2026-09-23T13:50:00+08:00",
+    "subject_id": "s-0923-pm",
+    "version": 37,
+    "payload": {
+      "zone_id": "z-atrium",
+      "member_id": "spec-2",
+      "audience": "SPECTATOR",
+      "observed_at": "2026-09-23T13:50:00+08:00"
+    }
+  },
+  {
+    "event_id": "0923-0040",
+    "kind": "ZONE_ENTRY_OBSERVED",
+    "occurred_at": "2026-09-23T13:50:00+08:00",
+    "subject_id": "s-0923-pm",
+    "version": 38,
+    "payload": {
+      "zone_id": "z-atrium",
+      "member_id": "spec-3",
+      "audience": "SPECTATOR",
+      "observed_at": "2026-09-23T13:50:00+08:00"
+    }
+  },
+  {
+    "event_id": "0923-0041",
+    "kind": "ZONE_ENTRY_OBSERVED",
+    "occurred_at": "2026-09-23T13:50:00+08:00",
+    "subject_id": "s-0923-pm",
+    "version": 39,
+    "payload": {
+      "zone_id": "z-atrium",
+      "member_id": "spec-4",
+      "audience": "SPECTATOR",
+      "observed_at": "2026-09-23T13:50:00+08:00"
+    }
+  },
+  {
+    "event_id": "0923-0042",
+    "kind": "ZONE_ENTRY_OBSERVED",
+    "occurred_at": "2026-09-23T13:50:00+08:00",
+    "subject_id": "s-0923-pm",
+    "version": 40,
+    "payload": {
+      "zone_id": "z-atrium",
+      "member_id": "spec-5",
+      "audience": "SPECTATOR",
+      "observed_at": "2026-09-23T13:50:00+08:00"
+    }
+  },
+  {
+    "event_id": "0923-0043",
+    "kind": "QUEUE_NOTICE_PUBLISHED",
+    "occurred_at": "2026-09-23T13:50:00+08:00",
+    "subject_id": "s-0923-pm",
+    "version": 41,
+    "payload": {
+      "zone_id": "z-atrium",
+      "expected_wait_minutes": 8,
+      "observed_at": "2026-09-23T13:50:00+08:00"
+    }
+  },
+  {
+    "event_id": "0923-0044",
+    "kind": "CHECKIN_SCANNED",
+    "occurred_at": "2026-09-23T13:55:00+08:00",
+    "subject_id": "s-0923-pm",
+    "version": 42,
+    "payload": {
+      "scan_id": "scan-1001",
+      "session_id": "s-0923-pm",
+      "zone_id": "z-atrium",
+      "team_id": "t-B",
+      "member_id": "b-dad",
+      "scanned_at": "2026-09-23T13:55:00+08:00",
+      "scanner_id": "gun-9",
+      "offline": false,
+      "client_record_id": "gun-9#1001"
+    }
+  },
+  {
+    "event_id": "0923-0045",
+    "kind": "CHECKIN_SCANNED",
+    "occurred_at": "2026-09-23T13:55:00+08:00",
+    "subject_id": "s-0923-pm",
+    "version": 43,
+    "payload": {
+      "scan_id": "scan-1001-retry",
+      "session_id": "s-0923-pm",
+      "zone_id": "z-atrium",
+      "team_id": "t-B",
+      "member_id": "b-dad",
+      "scanned_at": "2026-09-23T13:55:00+08:00",
+      "scanner_id": "gun-9",
+      "offline": false,
+      "client_record_id": "gun-9#1001"
+    }
+  },
+  {
+    "event_id": "0923-0046",
+    "kind": "CHECKIN_DEDUP_REJECTED",
+    "occurred_at": "2026-09-23T13:56:00+08:00",
+    "subject_id": "s-0923-pm",
+    "version": 44,
+    "payload": {
+      "client_record_id": "gun-9#1001",
+      "session_id": "s-0923-pm",
+      "reason": "DUPLICATE_SCAN"
+    }
+  },
+  {
+    "event_id": "0923-0047",
+    "kind": "OFFLINE_BATCH_SYNCED",
+    "occurred_at": "2026-09-23T14:30:00+08:00",
+    "subject_id": "s-0923-pm",
+    "version": 45,
+    "payload": {
+      "batch_id": "batch-gun9-1",
+      "scanner_id": "gun-9",
+      "records": [
+        {
+          "client_record_id": "gun-9#1001",
+          "zone_id": "z-atrium",
+          "team_id": "t-B",
+          "member_id": "b-dad",
+          "scanned_at": "2026-09-23T13:54:00+08:00"
+        },
+        {
+          "client_record_id": "gun-9#1002",
+          "zone_id": "z-atrium",
+          "team_id": "t-B",
+          "member_id": "b-kid",
+          "scanned_at": "2026-09-23T13:57:00+08:00"
+        }
+      ]
+    }
+  },
+  {
+    "event_id": "0923-0048",
+    "kind": "ZONE_EXIT_OBSERVED",
+    "occurred_at": "2026-09-23T14:02:00+08:00",
+    "subject_id": "s-0923-pm",
+    "version": 46,
+    "payload": {
+      "zone_id": "z-atrium",
+      "member_id": "spec-0",
+      "audience": "SPECTATOR",
+      "observed_at": "2026-09-23T14:02:00+08:00"
+    }
+  },
+  {
+    "event_id": "0923-0049",
+    "kind": "ZONE_EXIT_OBSERVED",
+    "occurred_at": "2026-09-23T14:02:00+08:00",
+    "subject_id": "s-0923-pm",
+    "version": 47,
+    "payload": {
+      "zone_id": "z-atrium",
+      "member_id": "spec-1",
+      "audience": "SPECTATOR",
+      "observed_at": "2026-09-23T14:02:00+08:00"
+    }
+  },
+  {
+    "event_id": "0923-0050",
+    "kind": "ZONE_EXIT_OBSERVED",
+    "occurred_at": "2026-09-23T14:02:00+08:00",
+    "subject_id": "s-0923-pm",
+    "version": 48,
+    "payload": {
+      "zone_id": "z-atrium",
+      "member_id": "spec-2",
+      "audience": "SPECTATOR",
+      "observed_at": "2026-09-23T14:02:00+08:00"
+    }
+  },
+  {
+    "event_id": "0923-0051",
+    "kind": "ZONE_EXIT_OBSERVED",
+    "occurred_at": "2026-09-23T14:02:00+08:00",
+    "subject_id": "s-0923-pm",
+    "version": 49,
+    "payload": {
+      "zone_id": "z-atrium",
+      "member_id": "spec-3",
+      "audience": "SPECTATOR",
+      "observed_at": "2026-09-23T14:02:00+08:00"
+    }
+  },
+  {
+    "event_id": "0923-0052",
+    "kind": "ZONE_EXIT_OBSERVED",
+    "occurred_at": "2026-09-23T14:02:00+08:00",
+    "subject_id": "s-0923-pm",
+    "version": 50,
+    "payload": {
+      "zone_id": "z-atrium",
+      "member_id": "spec-4",
+      "audience": "SPECTATOR",
+      "observed_at": "2026-09-23T14:02:00+08:00"
+    }
+  },
+  {
+    "event_id": "0923-0053",
+    "kind": "ZONE_EXIT_OBSERVED",
+    "occurred_at": "2026-09-23T14:02:00+08:00",
+    "subject_id": "s-0923-pm",
+    "version": 51,
+    "payload": {
+      "zone_id": "z-atrium",
+      "member_id": "spec-5",
+      "audience": "SPECTATOR",
+      "observed_at": "2026-09-23T14:02:00+08:00"
+    }
+  },
+  {
+    "event_id": "0923-0054",
+    "kind": "CROWD_OBSERVED",
+    "occurred_at": "2026-09-23T13:58:00+08:00",
+    "subject_id": "s-0923-pm",
+    "version": 52,
+    "payload": {
+      "zone_id": "z-atrium",
+      "observed_at": "2026-09-23T13:58:00+08:00",
+      "competitors_present": 2,
+      "spectators_present": 18,
+      "queue_length": 24,
+      "source": "STEWARD_COUNT"
+    }
+  },
+  {
+    "event_id": "0923-0055",
+    "kind": "CROWD_THRESHOLD_CROSSED",
+    "occurred_at": "2026-09-23T14:01:00+08:00",
+    "subject_id": "s-0923-pm",
+    "version": 53,
+    "payload": {
+      "zone_id": "z-atrium",
+      "metric": "EGRESS_QUEUE_LENGTH",
+      "observed_value": 24,
+      "threshold": 15,
+      "direction": "OVER",
+      "observed_at": "2026-09-23T14:01:00+08:00"
+    }
+  },
+  {
+    "event_id": "0923-0056",
+    "kind": "QUEUE_NOTICE_PUBLISHED",
+    "occurred_at": "2026-09-23T14:02:00+08:00",
+    "subject_id": "s-0923-pm",
+    "version": 54,
+    "payload": {
+      "zone_id": "z-atrium",
+      "expected_wait_minutes": 20,
+      "observed_at": "2026-09-23T14:02:00+08:00"
+    }
+  },
+  {
+    "event_id": "0923-0057",
+    "kind": "AREA_SUSPENSION_STARTED",
+    "occurred_at": "2026-09-23T14:05:00+08:00",
+    "subject_id": "s-0923-pm",
+    "version": 55,
+    "payload": {
+      "suspension_id": "sp-1",
+      "zone_ids": [
+        "z-atrium"
+      ],
+      "reason": "ADJACENT_EGRESS_CONGESTION",
+      "issued_by": "duty-mgr-7",
+      "started_at": "2026-09-23T14:05:00+08:00"
+    }
+  },
+  {
+    "event_id": "0923-0058",
+    "kind": "SESSION_CHANGE_PUBLISHED",
+    "occurred_at": "2026-09-23T14:06:00+08:00",
+    "subject_id": "s-0923-pm",
+    "version": 56,
+    "payload": {
+      "session_id": "s-0923-pm",
+      "change_type": "ZONE_SUSPENDED",
+      "message": "主中庭临时暂停，已到场者引导至北侧空地",
+      "visible_at": "2026-09-23T14:06:00+08:00"
+    }
+  },
+  {
+    "event_id": "0923-0059",
+    "kind": "SUSPENSION_ARRANGEMENT_ISSUED",
+    "occurred_at": "2026-09-23T14:06:00+08:00",
+    "subject_id": "s-0923-pm",
+    "version": 57,
+    "payload": {
+      "suspension_id": "sp-1",
+      "team_ids": [
+        "t-B"
+      ],
+      "action": "RELOCATE",
+      "instruction": {
+        "target_zone_id": "z-neighbor",
+        "note": "工作人员步行引导，赛程顺延 10 分钟"
+      },
+      "issued_at": "2026-09-23T14:06:00+08:00"
+    }
+  },
+  {
+    "event_id": "0923-0060",
+    "kind": "ENTRY_SLOT_RESCHEDULED",
+    "occurred_at": "2026-09-23T14:07:00+08:00",
+    "subject_id": "s-0923-pm",
+    "version": 58,
+    "payload": {
+      "team_id": "t-C",
+      "session_id": "s-0923-pm",
+      "admit_from": "2026-09-23T14:12:00+08:00",
+      "admit_until": "2026-09-23T14:22:00+08:00",
+      "reason": "ZONE_SUSPENDED"
+    }
+  },
+  {
+    "event_id": "0923-0061",
+    "kind": "AREA_SUSPENSION_LIFTED",
+    "occurred_at": "2026-09-23T14:10:00+08:00",
+    "subject_id": "s-0923-pm",
+    "version": 59,
+    "payload": {
+      "suspension_id": "sp-1",
+      "ended_at": "2026-09-23T14:10:00+08:00"
+    }
+  },
+  {
+    "event_id": "0923-0062",
+    "kind": "SESSION_CHANGE_PUBLISHED",
+    "occurred_at": "2026-09-23T14:11:00+08:00",
+    "subject_id": "s-0923-pm",
+    "version": 60,
+    "payload": {
+      "session_id": "s-0923-pm",
+      "change_type": "ZONE_RESUMED",
+      "message": "主中庭已恢复，北侧空地比赛继续",
+      "visible_at": "2026-09-23T14:11:00+08:00"
+    }
+  },
+  {
+    "event_id": "0923-0063",
+    "kind": "CHECKIN_SCANNED",
+    "occurred_at": "2026-09-23T14:12:00+08:00",
+    "subject_id": "s-0923-pm",
+    "version": 61,
+    "payload": {
+      "scan_id": "scan-2001",
+      "session_id": "s-0923-pm",
+      "zone_id": "z-neighbor",
+      "team_id": "t-C",
+      "member_id": "c-1",
+      "scanned_at": "2026-09-23T14:12:00+08:00",
+      "scanner_id": "gun-3",
+      "offline": false,
+      "client_record_id": "gun-3#2001"
+    }
+  },
+  {
+    "event_id": "0923-0064",
+    "kind": "CHECKIN_SCANNED",
+    "occurred_at": "2026-09-23T14:12:00+08:00",
+    "subject_id": "s-0923-pm",
+    "version": 62,
+    "payload": {
+      "scan_id": "scan-2002",
+      "session_id": "s-0923-pm",
+      "zone_id": "z-neighbor",
+      "team_id": "t-C",
+      "member_id": "c-2",
+      "scanned_at": "2026-09-23T14:12:00+08:00",
+      "scanner_id": "gun-3",
+      "offline": false,
+      "client_record_id": "gun-3#2002"
+    }
+  },
+  {
+    "event_id": "0923-0065",
+    "kind": "CHECKIN_SCANNED",
+    "occurred_at": "2026-09-23T14:13:00+08:00",
+    "subject_id": "s-0923-pm",
+    "version": 63,
+    "payload": {
+      "scan_id": "scan-d-d-1",
+      "session_id": "s-0923-pm",
+      "zone_id": "z-neighbor",
+      "team_id": "t-D",
+      "member_id": "d-1",
+      "scanned_at": "2026-09-23T14:13:00+08:00",
+      "scanner_id": "gun-3",
+      "offline": false,
+      "client_record_id": "gun-3#d-d-1"
+    }
+  },
+  {
+    "event_id": "0923-0066",
+    "kind": "CHECKIN_SCANNED",
+    "occurred_at": "2026-09-23T14:13:00+08:00",
+    "subject_id": "s-0923-pm",
+    "version": 64,
+    "payload": {
+      "scan_id": "scan-d-d-2",
+      "session_id": "s-0923-pm",
+      "zone_id": "z-neighbor",
+      "team_id": "t-D",
+      "member_id": "d-2",
+      "scanned_at": "2026-09-23T14:13:00+08:00",
+      "scanner_id": "gun-3",
+      "offline": false,
+      "client_record_id": "gun-3#d-d-2"
+    }
+  },
+  {
+    "event_id": "0923-0067",
+    "kind": "ZONE_ENTRY_OBSERVED",
+    "occurred_at": "2026-09-23T14:08:00+08:00",
+    "subject_id": "s-0923-pm",
+    "version": 65,
+    "payload": {
+      "zone_id": "z-neighbor",
+      "member_id": "b-dad",
+      "audience": "COMPETITOR",
+      "observed_at": "2026-09-23T14:08:00+08:00"
+    }
+  },
+  {
+    "event_id": "0923-0068",
+    "kind": "ZONE_ENTRY_OBSERVED",
+    "occurred_at": "2026-09-23T14:08:00+08:00",
+    "subject_id": "s-0923-pm",
+    "version": 66,
+    "payload": {
+      "zone_id": "z-neighbor",
+      "member_id": "b-kid",
+      "audience": "COMPETITOR",
+      "observed_at": "2026-09-23T14:08:00+08:00"
+    }
+  },
+  {
+    "event_id": "0923-0069",
+    "kind": "ZONE_ENTRY_OBSERVED",
+    "occurred_at": "2026-09-23T14:13:00+08:00",
+    "subject_id": "s-0923-pm",
+    "version": 67,
+    "payload": {
+      "zone_id": "z-neighbor",
+      "member_id": "c-1",
+      "audience": "COMPETITOR",
+      "observed_at": "2026-09-23T14:13:00+08:00"
+    }
+  },
+  {
+    "event_id": "0923-0070",
+    "kind": "ZONE_ENTRY_OBSERVED",
+    "occurred_at": "2026-09-23T14:13:00+08:00",
+    "subject_id": "s-0923-pm",
+    "version": 68,
+    "payload": {
+      "zone_id": "z-neighbor",
+      "member_id": "c-2",
+      "audience": "COMPETITOR",
+      "observed_at": "2026-09-23T14:13:00+08:00"
+    }
+  },
+  {
+    "event_id": "0923-0071",
+    "kind": "ZONE_ENTRY_OBSERVED",
+    "occurred_at": "2026-09-23T14:13:00+08:00",
+    "subject_id": "s-0923-pm",
+    "version": 69,
+    "payload": {
+      "zone_id": "z-neighbor",
+      "member_id": "d-1",
+      "audience": "COMPETITOR",
+      "observed_at": "2026-09-23T14:13:00+08:00"
+    }
+  },
+  {
+    "event_id": "0923-0072",
+    "kind": "ZONE_ENTRY_OBSERVED",
+    "occurred_at": "2026-09-23T14:13:00+08:00",
+    "subject_id": "s-0923-pm",
+    "version": 70,
+    "payload": {
+      "zone_id": "z-neighbor",
+      "member_id": "d-2",
+      "audience": "COMPETITOR",
+      "observed_at": "2026-09-23T14:13:00+08:00"
+    }
+  },
+  {
+    "event_id": "0923-0073",
+    "kind": "INCIDENT_REPORTED",
+    "occurred_at": "2026-09-23T14:15:00+08:00",
+    "subject_id": "s-0923-pm",
+    "version": 71,
+    "payload": {
+      "incident_id": "i-1",
+      "zone_id": "z-neighbor",
+      "kind": "INJURY",
+      "severity": "MEDIUM",
+      "reported_by": "staff-1",
+      "reported_at": "2026-09-23T14:15:00+08:00"
+    }
+  },
+  {
+    "event_id": "0923-0074",
+    "kind": "RESPONDER_ASSIGNED",
+    "occurred_at": "2026-09-23T14:15:00+08:00",
+    "subject_id": "s-0923-pm",
+    "version": 72,
+    "payload": {
+      "incident_id": "i-1",
+      "responder_id": "r-1",
+      "role": "FIRST_AID",
+      "assigned_at": "2026-09-23T14:15:00+08:00"
+    }
+  },
+  {
+    "event_id": "0923-0075",
+    "kind": "MEDIA_ASSET_CAPTURED",
+    "occurred_at": "2026-09-23T14:16:00+08:00",
+    "subject_id": "s-0923-pm",
+    "version": 73,
+    "payload": {
+      "asset_id": "a-injury-1",
+      "zone_id": "z-neighbor",
+      "captured_at": "2026-09-23T14:16:00+08:00",
+      "consent_ids": [
+        "c-bkid"
+      ],
+      "incident_id": "i-1",
+      "sensitive": true
+    }
+  },
+  {
+    "event_id": "0923-0076",
+    "kind": "ASSET_ACCESS_GRANTED",
+    "occurred_at": "2026-09-23T14:17:00+08:00",
+    "subject_id": "s-0923-pm",
+    "version": 74,
+    "payload": {
+      "asset_id": "a-injury-1",
+      "incident_id": "i-1",
+      "responder_id": "r-1",
+      "purpose": "TREATMENT",
+      "granted_at": "2026-09-23T14:17:00+08:00",
+      "expires_at": "2026-09-23T15:17:00+08:00"
+    }
+  },
+  {
+    "event_id": "0923-0077",
+    "kind": "INCIDENT_REPORTED",
+    "occurred_at": "2026-09-23T14:20:00+08:00",
+    "subject_id": "s-0923-pm",
+    "version": 75,
+    "payload": {
+      "incident_id": "i-2",
+      "zone_id": "z-neighbor",
+      "kind": "MINOR_LOST",
+      "severity": "MEDIUM",
+      "reported_by": "staff-2",
+      "reported_at": "2026-09-23T14:20:00+08:00"
+    }
+  },
+  {
+    "event_id": "0923-0078",
+    "kind": "RESPONDER_ASSIGNED",
+    "occurred_at": "2026-09-23T14:20:00+08:00",
+    "subject_id": "s-0923-pm",
+    "version": 76,
+    "payload": {
+      "incident_id": "i-2",
+      "responder_id": "r-2",
+      "role": "SECURITY",
+      "assigned_at": "2026-09-23T14:20:00+08:00"
+    }
+  },
+  {
+    "event_id": "0923-0079",
+    "kind": "MINOR_REUNITED",
+    "occurred_at": "2026-09-23T14:35:00+08:00",
+    "subject_id": "s-0923-pm",
+    "version": 77,
+    "payload": {
+      "incident_id": "i-2",
+      "member_id": "b-kid",
+      "guardian_id": "g-chen",
+      "verified_by": "staff-3",
+      "at": "2026-09-23T14:35:00+08:00"
+    }
+  },
+  {
+    "event_id": "0923-0080",
+    "kind": "INCIDENT_STATUS_CHANGED",
+    "occurred_at": "2026-09-23T14:36:00+08:00",
+    "subject_id": "s-0923-pm",
+    "version": 78,
+    "payload": {
+      "incident_id": "i-2",
+      "status": "RESOLVED",
+      "at": "2026-09-23T14:36:00+08:00"
+    }
+  },
+  {
+    "event_id": "0923-0081",
+    "kind": "ZONE_EXIT_OBSERVED",
+    "occurred_at": "2026-09-23T14:40:00+08:00",
+    "subject_id": "s-0923-pm",
+    "version": 79,
+    "payload": {
+      "zone_id": "z-neighbor",
+      "member_id": "b-dad",
+      "audience": "COMPETITOR",
+      "observed_at": "2026-09-23T14:40:00+08:00"
+    }
+  },
+  {
+    "event_id": "0923-0082",
+    "kind": "ZONE_EXIT_OBSERVED",
+    "occurred_at": "2026-09-23T14:40:00+08:00",
+    "subject_id": "s-0923-pm",
+    "version": 80,
+    "payload": {
+      "zone_id": "z-neighbor",
+      "member_id": "b-kid",
+      "audience": "COMPETITOR",
+      "observed_at": "2026-09-23T14:40:00+08:00"
+    }
+  },
+  {
+    "event_id": "0923-0083",
+    "kind": "TEAM_CANCELLED",
+    "occurred_at": "2026-09-23T14:45:00+08:00",
+    "subject_id": "s-0923-pm",
+    "version": 81,
+    "payload": {
+      "team_id": "t-B",
+      "session_id": "s-0923-pm",
+      "cancelled_at": "2026-09-23T14:45:00+08:00",
+      "had_checked_in": true
+    }
+  },
+  {
+    "event_id": "0923-0084",
+    "kind": "BRACKET_BUILT",
+    "occurred_at": "2026-09-23T14:46:00+08:00",
+    "subject_id": "s-0923-pm",
+    "version": 82,
+    "payload": {
+      "session_id": "s-0923-pm",
+      "groups": [
+        {
+          "group_id": "g-A",
+          "zone_id": "z-neighbor",
+          "heat_no": 1,
+          "team_ids": [
+            "t-C",
+            "t-D"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "event_id": "0923-0085",
+    "kind": "HEAT_CALLED",
+    "occurred_at": "2026-09-23T14:47:00+08:00",
+    "subject_id": "s-0923-pm",
+    "version": 83,
+    "payload": {
+      "session_id": "s-0923-pm",
+      "group_id": "g-A",
+      "called_at": "2026-09-23T14:47:00+08:00"
+    }
+  },
+  {
+    "event_id": "0923-0086",
+    "kind": "MATCH_RESULT_RECORDED",
+    "occurred_at": "2026-09-23T14:50:00+08:00",
+    "subject_id": "s-0923-pm",
+    "version": 84,
+    "payload": {
+      "match_id": "m-1",
+      "session_id": "s-0923-pm",
+      "group_id": "g-A",
+      "referee_id": "ref-1",
+      "rankings": [
+        {
+          "team_id": "t-C",
+          "rank": 1,
+          "score": 42
+        },
+        {
+          "team_id": "t-D",
+          "rank": 2,
+          "score": 39
+        }
+      ],
+      "recorded_at": "2026-09-23T14:50:00+08:00"
+    }
+  },
+  {
+    "event_id": "0923-0087",
+    "kind": "RESULT_AMENDED",
+    "occurred_at": "2026-09-23T14:55:00+08:00",
+    "subject_id": "s-0923-pm",
+    "version": 85,
+    "payload": {
+      "match_id": "m-1",
+      "amendment_id": "am-1",
+      "referee_id": "ref-2",
+      "rankings": [
+        {
+          "team_id": "t-D",
+          "rank": 1,
+          "score": 44
+        },
+        {
+          "team_id": "t-C",
+          "rank": 2,
+          "score": 42
+        }
+      ],
+      "reason": "回看录像确认压线有效",
+      "amended_at": "2026-09-23T14:55:00+08:00"
+    }
+  },
+  {
+    "event_id": "0923-0088",
+    "kind": "ASSET_ACCESS_REVOKED",
+    "occurred_at": "2026-09-23T14:56:00+08:00",
+    "subject_id": "s-0923-pm",
+    "version": 86,
+    "payload": {
+      "asset_id": "a-injury-1",
+      "responder_id": "r-1",
+      "revoked_at": "2026-09-23T14:56:00+08:00"
+    }
+  },
+  {
+    "event_id": "0923-0089",
+    "kind": "INCIDENT_RESOLVED",
+    "occurred_at": "2026-09-23T14:57:00+08:00",
+    "subject_id": "s-0923-pm",
+    "version": 87,
+    "payload": {
+      "incident_id": "i-1",
+      "resolution": "冰敷处理后无碍，已告知当班经理并登记",
+      "resolved_at": "2026-09-23T14:57:00+08:00"
+    }
+  },
+  {
+    "event_id": "0923-0090",
+    "kind": "PRIZE_AWARDED",
+    "occurred_at": "2026-09-23T15:00:00+08:00",
+    "subject_id": "s-0923-pm",
+    "version": 88,
+    "payload": {
+      "prize_id": "p-part",
+      "team_id": "t-C",
+      "awarded_by": "staff-4",
+      "awarded_at": "2026-09-23T15:00:00+08:00"
+    }
+  },
+  {
+    "event_id": "0923-0091",
+    "kind": "PRIZE_AWARDED",
+    "occurred_at": "2026-09-23T15:00:00+08:00",
+    "subject_id": "s-0923-pm",
+    "version": 89,
+    "payload": {
+      "prize_id": "p-part",
+      "team_id": "t-D",
+      "awarded_by": "staff-4",
+      "awarded_at": "2026-09-23T15:00:00+08:00"
+    }
+  },
+  {
+    "event_id": "0923-0092",
+    "kind": "PRIZE_AWARDED",
+    "occurred_at": "2026-09-23T15:02:00+08:00",
+    "subject_id": "s-0923-pm",
+    "version": 90,
+    "payload": {
+      "prize_id": "p-rank",
+      "team_id": "t-D",
+      "awarded_by": "staff-4",
+      "awarded_at": "2026-09-23T15:02:00+08:00"
+    }
+  },
+  {
+    "event_id": "0923-0093",
+    "kind": "MEDIA_ASSET_CAPTURED",
+    "occurred_at": "2026-09-23T14:58:00+08:00",
+    "subject_id": "s-0923-pm",
+    "version": 91,
+    "payload": {
+      "asset_id": "a-fun-1",
+      "zone_id": "z-neighbor",
+      "captured_at": "2026-09-23T14:58:00+08:00",
+      "consent_ids": [
+        "c-c1"
+      ],
+      "incident_id": null,
+      "sensitive": false
+    }
+  },
+  {
+    "event_id": "0923-0094",
+    "kind": "ZONE_EXIT_OBSERVED",
+    "occurred_at": "2026-09-23T15:03:00+08:00",
+    "subject_id": "s-0923-pm",
+    "version": 92,
+    "payload": {
+      "zone_id": "z-neighbor",
+      "member_id": "c-1",
+      "audience": "COMPETITOR",
+      "observed_at": "2026-09-23T15:03:00+08:00"
+    }
+  },
+  {
+    "event_id": "0923-0095",
+    "kind": "ZONE_EXIT_OBSERVED",
+    "occurred_at": "2026-09-23T15:03:00+08:00",
+    "subject_id": "s-0923-pm",
+    "version": 93,
+    "payload": {
+      "zone_id": "z-neighbor",
+      "member_id": "c-2",
+      "audience": "COMPETITOR",
+      "observed_at": "2026-09-23T15:03:00+08:00"
+    }
+  },
+  {
+    "event_id": "0923-0096",
+    "kind": "ZONE_EXIT_OBSERVED",
+    "occurred_at": "2026-09-23T15:03:00+08:00",
+    "subject_id": "s-0923-pm",
+    "version": 94,
+    "payload": {
+      "zone_id": "z-neighbor",
+      "member_id": "d-1",
+      "audience": "COMPETITOR",
+      "observed_at": "2026-09-23T15:03:00+08:00"
+    }
+  },
+  {
+    "event_id": "0923-0097",
+    "kind": "ZONE_EXIT_OBSERVED",
+    "occurred_at": "2026-09-23T15:03:00+08:00",
+    "subject_id": "s-0923-pm",
+    "version": 95,
+    "payload": {
+      "zone_id": "z-neighbor",
+      "member_id": "d-2",
+      "audience": "COMPETITOR",
+      "observed_at": "2026-09-23T15:03:00+08:00"
+    }
+  },
+  {
+    "event_id": "0923-0098",
+    "kind": "MEDIA_RELEASE_REQUESTED",
+    "occurred_at": "2026-09-23T15:40:00+08:00",
+    "subject_id": "s-0923-pm",
+    "version": 96,
+    "payload": {
+      "request_id": "q-1",
+      "asset_id": "a-fun-1",
+      "channel": "WECHAT",
+      "requested_by": "mkt-1",
+      "requested_at": "2026-09-23T15:40:00+08:00"
+    }
+  },
+  {
+    "event_id": "0923-0099",
+    "kind": "MEDIA_RELEASE_DECIDED",
+    "occurred_at": "2026-09-23T15:45:00+08:00",
+    "subject_id": "s-0923-pm",
+    "version": 97,
+    "payload": {
+      "request_id": "q-1",
+      "decision": "APPROVE",
+      "decided_by": "mkt-lead",
+      "decided_at": "2026-09-23T15:45:00+08:00",
+      "reason": "授权范围含公域宣传，非敏感素材"
+    }
+  }
+]

@@ -1,0 +1,2279 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "趣味赛事运行系统事件信封",
+  "type": "object",
+  "required": [
+    "event_id",
+    "kind",
+    "occurred_at",
+    "subject_id",
+    "version"
+  ],
+  "properties": {
+    "event_id": {
+      "type": "string",
+      "minLength": 1,
+      "description": "全局唯一、幂等；重放不产生副作用"
+    },
+    "kind": {
+      "type": "string",
+      "enum": [
+        "AREA_SUSPENSION_LIFTED",
+        "AREA_SUSPENSION_STARTED",
+        "ASSET_ACCESS_GRANTED",
+        "ASSET_ACCESS_REVOKED",
+        "BRACKET_BUILT",
+        "CHECKIN_DEDUP_REJECTED",
+        "CHECKIN_SCANNED",
+        "CROWD_OBSERVED",
+        "CROWD_THRESHOLD_CROSSED",
+        "ELIGIBILITY_RULE_SET",
+        "ENTRY_SLOT_ASSIGNED",
+        "ENTRY_SLOT_RESCHEDULED",
+        "GAME_REGISTERED",
+        "GAME_SCHEDULED",
+        "HEAT_CALLED",
+        "INCIDENT_REPORTED",
+        "INCIDENT_RESOLVED",
+        "INCIDENT_STATUS_CHANGED",
+        "LATE_ARRIVAL_MARKED",
+        "MATCH_RESULT_RECORDED",
+        "MEDIA_ASSET_CAPTURED",
+        "MEDIA_CONSENT_GRANTED",
+        "MEDIA_CONSENT_WITHDRAWN",
+        "MEDIA_RELEASE_DECIDED",
+        "MEDIA_RELEASE_REQUESTED",
+        "MERCHANT_TASK_ASSIGNED",
+        "MERCHANT_TASK_CONFIRMED",
+        "MINOR_REUNITED",
+        "OFFLINE_BATCH_SYNCED",
+        "PLAN_FROZEN",
+        "PLAN_UNFROZEN",
+        "PRIZE_AWARDED",
+        "PRIZE_DEFINED",
+        "QUEUE_NOTICE_PUBLISHED",
+        "READINESS_CHECK_STARTED",
+        "READINESS_ITEM_CONFIRMED",
+        "REGISTRATION_ACCEPTED",
+        "REGISTRATION_REJECTED",
+        "RESPONDER_ASSIGNED",
+        "RESULT_AMENDED",
+        "SESSION_CHANGE_PUBLISHED",
+        "SLOT_FORFEITED",
+        "SUSPENSION_ARRANGEMENT_ISSUED",
+        "TEAM_CANCELLED",
+        "TEAM_REGISTERED",
+        "VENUE_VERSION_PUBLISHED",
+        "WAITLIST_ENTERED",
+        "WAITLIST_PROMOTED",
+        "ZONE_ENTRY_OBSERVED",
+        "ZONE_EXIT_OBSERVED"
+      ]
+    },
+    "occurred_at": {
+      "type": "string",
+      "format": "date-time",
+      "description": "业务发生时刻（ISO-8601 带时区），断网补签也填实际时刻"
+    },
+    "subject_id": {
+      "type": "string",
+      "minLength": 1,
+      "description": "聚合主体，通常为场次 session_id"
+    },
+    "version": {
+      "type": "integer",
+      "minimum": 1,
+      "description": "同一 subject_id 内单调递增"
+    },
+    "actor_id": {
+      "type": "string"
+    }
+  },
+  "oneOf": [
+    {
+      "properties": {
+        "kind": {
+          "const": "AREA_SUSPENSION_LIFTED"
+        },
+        "payload": {
+          "$ref": "#/$defs/payload/AREA_SUSPENSION_LIFTED"
+        }
+      },
+      "required": [
+        "event_id",
+        "kind",
+        "occurred_at",
+        "subject_id",
+        "version",
+        "payload"
+      ]
+    },
+    {
+      "properties": {
+        "kind": {
+          "const": "AREA_SUSPENSION_STARTED"
+        },
+        "payload": {
+          "$ref": "#/$defs/payload/AREA_SUSPENSION_STARTED"
+        }
+      },
+      "required": [
+        "event_id",
+        "kind",
+        "occurred_at",
+        "subject_id",
+        "version",
+        "payload"
+      ]
+    },
+    {
+      "properties": {
+        "kind": {
+          "const": "ASSET_ACCESS_GRANTED"
+        },
+        "payload": {
+          "$ref": "#/$defs/payload/ASSET_ACCESS_GRANTED"
+        }
+      },
+      "required": [
+        "event_id",
+        "kind",
+        "occurred_at",
+        "subject_id",
+        "version",
+        "payload"
+      ]
+    },
+    {
+      "properties": {
+        "kind": {
+          "const": "ASSET_ACCESS_REVOKED"
+        },
+        "payload": {
+          "$ref": "#/$defs/payload/ASSET_ACCESS_REVOKED"
+        }
+      },
+      "required": [
+        "event_id",
+        "kind",
+        "occurred_at",
+        "subject_id",
+        "version",
+        "payload"
+      ]
+    },
+    {
+      "properties": {
+        "kind": {
+          "const": "BRACKET_BUILT"
+        },
+        "payload": {
+          "$ref": "#/$defs/payload/BRACKET_BUILT"
+        }
+      },
+      "required": [
+        "event_id",
+        "kind",
+        "occurred_at",
+        "subject_id",
+        "version",
+        "payload"
+      ]
+    },
+    {
+      "properties": {
+        "kind": {
+          "const": "CHECKIN_DEDUP_REJECTED"
+        },
+        "payload": {
+          "$ref": "#/$defs/payload/CHECKIN_DEDUP_REJECTED"
+        }
+      },
+      "required": [
+        "event_id",
+        "kind",
+        "occurred_at",
+        "subject_id",
+        "version",
+        "payload"
+      ]
+    },
+    {
+      "properties": {
+        "kind": {
+          "const": "CHECKIN_SCANNED"
+        },
+        "payload": {
+          "$ref": "#/$defs/payload/CHECKIN_SCANNED"
+        }
+      },
+      "required": [
+        "event_id",
+        "kind",
+        "occurred_at",
+        "subject_id",
+        "version",
+        "payload"
+      ]
+    },
+    {
+      "properties": {
+        "kind": {
+          "const": "CROWD_OBSERVED"
+        },
+        "payload": {
+          "$ref": "#/$defs/payload/CROWD_OBSERVED"
+        }
+      },
+      "required": [
+        "event_id",
+        "kind",
+        "occurred_at",
+        "subject_id",
+        "version",
+        "payload"
+      ]
+    },
+    {
+      "properties": {
+        "kind": {
+          "const": "CROWD_THRESHOLD_CROSSED"
+        },
+        "payload": {
+          "$ref": "#/$defs/payload/CROWD_THRESHOLD_CROSSED"
+        }
+      },
+      "required": [
+        "event_id",
+        "kind",
+        "occurred_at",
+        "subject_id",
+        "version",
+        "payload"
+      ]
+    },
+    {
+      "properties": {
+        "kind": {
+          "const": "ELIGIBILITY_RULE_SET"
+        },
+        "payload": {
+          "$ref": "#/$defs/payload/ELIGIBILITY_RULE_SET"
+        }
+      },
+      "required": [
+        "event_id",
+        "kind",
+        "occurred_at",
+        "subject_id",
+        "version",
+        "payload"
+      ]
+    },
+    {
+      "properties": {
+        "kind": {
+          "const": "ENTRY_SLOT_ASSIGNED"
+        },
+        "payload": {
+          "$ref": "#/$defs/payload/ENTRY_SLOT_ASSIGNED"
+        }
+      },
+      "required": [
+        "event_id",
+        "kind",
+        "occurred_at",
+        "subject_id",
+        "version",
+        "payload"
+      ]
+    },
+    {
+      "properties": {
+        "kind": {
+          "const": "ENTRY_SLOT_RESCHEDULED"
+        },
+        "payload": {
+          "$ref": "#/$defs/payload/ENTRY_SLOT_RESCHEDULED"
+        }
+      },
+      "required": [
+        "event_id",
+        "kind",
+        "occurred_at",
+        "subject_id",
+        "version",
+        "payload"
+      ]
+    },
+    {
+      "properties": {
+        "kind": {
+          "const": "GAME_REGISTERED"
+        },
+        "payload": {
+          "$ref": "#/$defs/payload/GAME_REGISTERED"
+        }
+      },
+      "required": [
+        "event_id",
+        "kind",
+        "occurred_at",
+        "subject_id",
+        "version",
+        "payload"
+      ]
+    },
+    {
+      "properties": {
+        "kind": {
+          "const": "GAME_SCHEDULED"
+        },
+        "payload": {
+          "$ref": "#/$defs/payload/GAME_SCHEDULED"
+        }
+      },
+      "required": [
+        "event_id",
+        "kind",
+        "occurred_at",
+        "subject_id",
+        "version",
+        "payload"
+      ]
+    },
+    {
+      "properties": {
+        "kind": {
+          "const": "HEAT_CALLED"
+        },
+        "payload": {
+          "$ref": "#/$defs/payload/HEAT_CALLED"
+        }
+      },
+      "required": [
+        "event_id",
+        "kind",
+        "occurred_at",
+        "subject_id",
+        "version",
+        "payload"
+      ]
+    },
+    {
+      "properties": {
+        "kind": {
+          "const": "INCIDENT_REPORTED"
+        },
+        "payload": {
+          "$ref": "#/$defs/payload/INCIDENT_REPORTED"
+        }
+      },
+      "required": [
+        "event_id",
+        "kind",
+        "occurred_at",
+        "subject_id",
+        "version",
+        "payload"
+      ]
+    },
+    {
+      "properties": {
+        "kind": {
+          "const": "INCIDENT_RESOLVED"
+        },
+        "payload": {
+          "$ref": "#/$defs/payload/INCIDENT_RESOLVED"
+        }
+      },
+      "required": [
+        "event_id",
+        "kind",
+        "occurred_at",
+        "subject_id",
+        "version",
+        "payload"
+      ]
+    },
+    {
+      "properties": {
+        "kind": {
+          "const": "INCIDENT_STATUS_CHANGED"
+        },
+        "payload": {
+          "$ref": "#/$defs/payload/INCIDENT_STATUS_CHANGED"
+        }
+      },
+      "required": [
+        "event_id",
+        "kind",
+        "occurred_at",
+        "subject_id",
+        "version",
+        "payload"
+      ]
+    },
+    {
+      "properties": {
+        "kind": {
+          "const": "LATE_ARRIVAL_MARKED"
+        },
+        "payload": {
+          "$ref": "#/$defs/payload/LATE_ARRIVAL_MARKED"
+        }
+      },
+      "required": [
+        "event_id",
+        "kind",
+        "occurred_at",
+        "subject_id",
+        "version",
+        "payload"
+      ]
+    },
+    {
+      "properties": {
+        "kind": {
+          "const": "MATCH_RESULT_RECORDED"
+        },
+        "payload": {
+          "$ref": "#/$defs/payload/MATCH_RESULT_RECORDED"
+        }
+      },
+      "required": [
+        "event_id",
+        "kind",
+        "occurred_at",
+        "subject_id",
+        "version",
+        "payload"
+      ]
+    },
+    {
+      "properties": {
+        "kind": {
+          "const": "MEDIA_ASSET_CAPTURED"
+        },
+        "payload": {
+          "$ref": "#/$defs/payload/MEDIA_ASSET_CAPTURED"
+        }
+      },
+      "required": [
+        "event_id",
+        "kind",
+        "occurred_at",
+        "subject_id",
+        "version",
+        "payload"
+      ]
+    },
+    {
+      "properties": {
+        "kind": {
+          "const": "MEDIA_CONSENT_GRANTED"
+        },
+        "payload": {
+          "$ref": "#/$defs/payload/MEDIA_CONSENT_GRANTED"
+        }
+      },
+      "required": [
+        "event_id",
+        "kind",
+        "occurred_at",
+        "subject_id",
+        "version",
+        "payload"
+      ]
+    },
+    {
+      "properties": {
+        "kind": {
+          "const": "MEDIA_CONSENT_WITHDRAWN"
+        },
+        "payload": {
+          "$ref": "#/$defs/payload/MEDIA_CONSENT_WITHDRAWN"
+        }
+      },
+      "required": [
+        "event_id",
+        "kind",
+        "occurred_at",
+        "subject_id",
+        "version",
+        "payload"
+      ]
+    },
+    {
+      "properties": {
+        "kind": {
+          "const": "MEDIA_RELEASE_DECIDED"
+        },
+        "payload": {
+          "$ref": "#/$defs/payload/MEDIA_RELEASE_DECIDED"
+        }
+      },
+      "required": [
+        "event_id",
+        "kind",
+        "occurred_at",
+        "subject_id",
+        "version",
+        "payload"
+      ]
+    },
+    {
+      "properties": {
+        "kind": {
+          "const": "MEDIA_RELEASE_REQUESTED"
+        },
+        "payload": {
+          "$ref": "#/$defs/payload/MEDIA_RELEASE_REQUESTED"
+        }
+      },
+      "required": [
+        "event_id",
+        "kind",
+        "occurred_at",
+        "subject_id",
+        "version",
+        "payload"
+      ]
+    },
+    {
+      "properties": {
+        "kind": {
+          "const": "MERCHANT_TASK_ASSIGNED"
+        },
+        "payload": {
+          "$ref": "#/$defs/payload/MERCHANT_TASK_ASSIGNED"
+        }
+      },
+      "required": [
+        "event_id",
+        "kind",
+        "occurred_at",
+        "subject_id",
+        "version",
+        "payload"
+      ]
+    },
+    {
+      "properties": {
+        "kind": {
+          "const": "MERCHANT_TASK_CONFIRMED"
+        },
+        "payload": {
+          "$ref": "#/$defs/payload/MERCHANT_TASK_CONFIRMED"
+        }
+      },
+      "required": [
+        "event_id",
+        "kind",
+        "occurred_at",
+        "subject_id",
+        "version",
+        "payload"
+      ]
+    },
+    {
+      "properties": {
+        "kind": {
+          "const": "MINOR_REUNITED"
+        },
+        "payload": {
+          "$ref": "#/$defs/payload/MINOR_REUNITED"
+        }
+      },
+      "required": [
+        "event_id",
+        "kind",
+        "occurred_at",
+        "subject_id",
+        "version",
+        "payload"
+      ]
+    },
+    {
+      "properties": {
+        "kind": {
+          "const": "OFFLINE_BATCH_SYNCED"
+        },
+        "payload": {
+          "$ref": "#/$defs/payload/OFFLINE_BATCH_SYNCED"
+        }
+      },
+      "required": [
+        "event_id",
+        "kind",
+        "occurred_at",
+        "subject_id",
+        "version",
+        "payload"
+      ]
+    },
+    {
+      "properties": {
+        "kind": {
+          "const": "PLAN_FROZEN"
+        },
+        "payload": {
+          "$ref": "#/$defs/payload/PLAN_FROZEN"
+        }
+      },
+      "required": [
+        "event_id",
+        "kind",
+        "occurred_at",
+        "subject_id",
+        "version",
+        "payload"
+      ]
+    },
+    {
+      "properties": {
+        "kind": {
+          "const": "PLAN_UNFROZEN"
+        },
+        "payload": {
+          "$ref": "#/$defs/payload/PLAN_UNFROZEN"
+        }
+      },
+      "required": [
+        "event_id",
+        "kind",
+        "occurred_at",
+        "subject_id",
+        "version",
+        "payload"
+      ]
+    },
+    {
+      "properties": {
+        "kind": {
+          "const": "PRIZE_AWARDED"
+        },
+        "payload": {
+          "$ref": "#/$defs/payload/PRIZE_AWARDED"
+        }
+      },
+      "required": [
+        "event_id",
+        "kind",
+        "occurred_at",
+        "subject_id",
+        "version",
+        "payload"
+      ]
+    },
+    {
+      "properties": {
+        "kind": {
+          "const": "PRIZE_DEFINED"
+        },
+        "payload": {
+          "$ref": "#/$defs/payload/PRIZE_DEFINED"
+        }
+      },
+      "required": [
+        "event_id",
+        "kind",
+        "occurred_at",
+        "subject_id",
+        "version",
+        "payload"
+      ]
+    },
+    {
+      "properties": {
+        "kind": {
+          "const": "QUEUE_NOTICE_PUBLISHED"
+        },
+        "payload": {
+          "$ref": "#/$defs/payload/QUEUE_NOTICE_PUBLISHED"
+        }
+      },
+      "required": [
+        "event_id",
+        "kind",
+        "occurred_at",
+        "subject_id",
+        "version",
+        "payload"
+      ]
+    },
+    {
+      "properties": {
+        "kind": {
+          "const": "READINESS_CHECK_STARTED"
+        },
+        "payload": {
+          "$ref": "#/$defs/payload/READINESS_CHECK_STARTED"
+        }
+      },
+      "required": [
+        "event_id",
+        "kind",
+        "occurred_at",
+        "subject_id",
+        "version",
+        "payload"
+      ]
+    },
+    {
+      "properties": {
+        "kind": {
+          "const": "READINESS_ITEM_CONFIRMED"
+        },
+        "payload": {
+          "$ref": "#/$defs/payload/READINESS_ITEM_CONFIRMED"
+        }
+      },
+      "required": [
+        "event_id",
+        "kind",
+        "occurred_at",
+        "subject_id",
+        "version",
+        "payload"
+      ]
+    },
+    {
+      "properties": {
+        "kind": {
+          "const": "REGISTRATION_ACCEPTED"
+        },
+        "payload": {
+          "$ref": "#/$defs/payload/REGISTRATION_ACCEPTED"
+        }
+      },
+      "required": [
+        "event_id",
+        "kind",
+        "occurred_at",
+        "subject_id",
+        "version",
+        "payload"
+      ]
+    },
+    {
+      "properties": {
+        "kind": {
+          "const": "REGISTRATION_REJECTED"
+        },
+        "payload": {
+          "$ref": "#/$defs/payload/REGISTRATION_REJECTED"
+        }
+      },
+      "required": [
+        "event_id",
+        "kind",
+        "occurred_at",
+        "subject_id",
+        "version",
+        "payload"
+      ]
+    },
+    {
+      "properties": {
+        "kind": {
+          "const": "RESPONDER_ASSIGNED"
+        },
+        "payload": {
+          "$ref": "#/$defs/payload/RESPONDER_ASSIGNED"
+        }
+      },
+      "required": [
+        "event_id",
+        "kind",
+        "occurred_at",
+        "subject_id",
+        "version",
+        "payload"
+      ]
+    },
+    {
+      "properties": {
+        "kind": {
+          "const": "RESULT_AMENDED"
+        },
+        "payload": {
+          "$ref": "#/$defs/payload/RESULT_AMENDED"
+        }
+      },
+      "required": [
+        "event_id",
+        "kind",
+        "occurred_at",
+        "subject_id",
+        "version",
+        "payload"
+      ]
+    },
+    {
+      "properties": {
+        "kind": {
+          "const": "SESSION_CHANGE_PUBLISHED"
+        },
+        "payload": {
+          "$ref": "#/$defs/payload/SESSION_CHANGE_PUBLISHED"
+        }
+      },
+      "required": [
+        "event_id",
+        "kind",
+        "occurred_at",
+        "subject_id",
+        "version",
+        "payload"
+      ]
+    },
+    {
+      "properties": {
+        "kind": {
+          "const": "SLOT_FORFEITED"
+        },
+        "payload": {
+          "$ref": "#/$defs/payload/SLOT_FORFEITED"
+        }
+      },
+      "required": [
+        "event_id",
+        "kind",
+        "occurred_at",
+        "subject_id",
+        "version",
+        "payload"
+      ]
+    },
+    {
+      "properties": {
+        "kind": {
+          "const": "SUSPENSION_ARRANGEMENT_ISSUED"
+        },
+        "payload": {
+          "$ref": "#/$defs/payload/SUSPENSION_ARRANGEMENT_ISSUED"
+        }
+      },
+      "required": [
+        "event_id",
+        "kind",
+        "occurred_at",
+        "subject_id",
+        "version",
+        "payload"
+      ]
+    },
+    {
+      "properties": {
+        "kind": {
+          "const": "TEAM_CANCELLED"
+        },
+        "payload": {
+          "$ref": "#/$defs/payload/TEAM_CANCELLED"
+        }
+      },
+      "required": [
+        "event_id",
+        "kind",
+        "occurred_at",
+        "subject_id",
+        "version",
+        "payload"
+      ]
+    },
+    {
+      "properties": {
+        "kind": {
+          "const": "TEAM_REGISTERED"
+        },
+        "payload": {
+          "$ref": "#/$defs/payload/TEAM_REGISTERED"
+        }
+      },
+      "required": [
+        "event_id",
+        "kind",
+        "occurred_at",
+        "subject_id",
+        "version",
+        "payload"
+      ]
+    },
+    {
+      "properties": {
+        "kind": {
+          "const": "VENUE_VERSION_PUBLISHED"
+        },
+        "payload": {
+          "$ref": "#/$defs/payload/VENUE_VERSION_PUBLISHED"
+        }
+      },
+      "required": [
+        "event_id",
+        "kind",
+        "occurred_at",
+        "subject_id",
+        "version",
+        "payload"
+      ]
+    },
+    {
+      "properties": {
+        "kind": {
+          "const": "WAITLIST_ENTERED"
+        },
+        "payload": {
+          "$ref": "#/$defs/payload/WAITLIST_ENTERED"
+        }
+      },
+      "required": [
+        "event_id",
+        "kind",
+        "occurred_at",
+        "subject_id",
+        "version",
+        "payload"
+      ]
+    },
+    {
+      "properties": {
+        "kind": {
+          "const": "WAITLIST_PROMOTED"
+        },
+        "payload": {
+          "$ref": "#/$defs/payload/WAITLIST_PROMOTED"
+        }
+      },
+      "required": [
+        "event_id",
+        "kind",
+        "occurred_at",
+        "subject_id",
+        "version",
+        "payload"
+      ]
+    },
+    {
+      "properties": {
+        "kind": {
+          "const": "ZONE_ENTRY_OBSERVED"
+        },
+        "payload": {
+          "$ref": "#/$defs/payload/ZONE_ENTRY_OBSERVED"
+        }
+      },
+      "required": [
+        "event_id",
+        "kind",
+        "occurred_at",
+        "subject_id",
+        "version",
+        "payload"
+      ]
+    },
+    {
+      "properties": {
+        "kind": {
+          "const": "ZONE_EXIT_OBSERVED"
+        },
+        "payload": {
+          "$ref": "#/$defs/payload/ZONE_EXIT_OBSERVED"
+        }
+      },
+      "required": [
+        "event_id",
+        "kind",
+        "occurred_at",
+        "subject_id",
+        "version",
+        "payload"
+      ]
+    }
+  ],
+  "$defs": {
+    "payload": {
+      "VENUE_VERSION_PUBLISHED": {
+        "type": "object",
+        "required": [
+          "venue_version_id",
+          "store_id",
+          "floor",
+          "zones"
+        ],
+        "properties": {
+          "venue_version_id": {
+            "description": "见 docs/domain.md"
+          },
+          "store_id": {
+            "description": "见 docs/domain.md"
+          },
+          "floor": {
+            "description": "见 docs/domain.md"
+          },
+          "zones": {
+            "description": "见 docs/domain.md"
+          }
+        },
+        "additionalProperties": true
+      },
+      "GAME_REGISTERED": {
+        "type": "object",
+        "required": [
+          "game_id",
+          "name",
+          "risk_level",
+          "team_size_min",
+          "team_size_max",
+          "age_min",
+          "age_max",
+          "guardian_required"
+        ],
+        "properties": {
+          "game_id": {
+            "description": "见 docs/domain.md"
+          },
+          "name": {
+            "description": "见 docs/domain.md"
+          },
+          "risk_level": {
+            "description": "见 docs/domain.md"
+          },
+          "team_size_min": {
+            "description": "见 docs/domain.md"
+          },
+          "team_size_max": {
+            "description": "见 docs/domain.md"
+          },
+          "age_min": {
+            "description": "见 docs/domain.md"
+          },
+          "age_max": {
+            "description": "见 docs/domain.md"
+          },
+          "guardian_required": {
+            "description": "见 docs/domain.md"
+          }
+        },
+        "additionalProperties": true
+      },
+      "GAME_SCHEDULED": {
+        "type": "object",
+        "required": [
+          "session_id",
+          "game_id",
+          "venue_version_id",
+          "zone_ids",
+          "slot_start",
+          "slot_end",
+          "competitor_capacity",
+          "spectator_capacity",
+          "roster_deadline",
+          "late_grace_minutes"
+        ],
+        "properties": {
+          "session_id": {
+            "description": "见 docs/domain.md"
+          },
+          "game_id": {
+            "description": "见 docs/domain.md"
+          },
+          "venue_version_id": {
+            "description": "见 docs/domain.md"
+          },
+          "zone_ids": {
+            "description": "见 docs/domain.md"
+          },
+          "slot_start": {
+            "description": "见 docs/domain.md"
+          },
+          "slot_end": {
+            "description": "见 docs/domain.md"
+          },
+          "competitor_capacity": {
+            "description": "见 docs/domain.md"
+          },
+          "spectator_capacity": {
+            "description": "见 docs/domain.md"
+          },
+          "roster_deadline": {
+            "description": "见 docs/domain.md"
+          },
+          "late_grace_minutes": {
+            "description": "见 docs/domain.md"
+          }
+        },
+        "additionalProperties": true
+      },
+      "ELIGIBILITY_RULE_SET": {
+        "type": "object",
+        "required": [
+          "session_id",
+          "rules"
+        ],
+        "properties": {
+          "session_id": {
+            "description": "见 docs/domain.md"
+          },
+          "rules": {
+            "description": "见 docs/domain.md"
+          }
+        },
+        "additionalProperties": true
+      },
+      "TEAM_REGISTERED": {
+        "type": "object",
+        "required": [
+          "team_id",
+          "session_id",
+          "members"
+        ],
+        "properties": {
+          "team_id": {
+            "description": "见 docs/domain.md"
+          },
+          "session_id": {
+            "description": "见 docs/domain.md"
+          },
+          "members": {
+            "description": "见 docs/domain.md"
+          }
+        },
+        "additionalProperties": true
+      },
+      "REGISTRATION_ACCEPTED": {
+        "type": "object",
+        "required": [
+          "team_id",
+          "session_id"
+        ],
+        "properties": {
+          "team_id": {
+            "description": "见 docs/domain.md"
+          },
+          "session_id": {
+            "description": "见 docs/domain.md"
+          }
+        },
+        "additionalProperties": true
+      },
+      "REGISTRATION_REJECTED": {
+        "type": "object",
+        "required": [
+          "team_id",
+          "session_id",
+          "reason"
+        ],
+        "properties": {
+          "team_id": {
+            "description": "见 docs/domain.md"
+          },
+          "session_id": {
+            "description": "见 docs/domain.md"
+          },
+          "reason": {
+            "description": "见 docs/domain.md"
+          }
+        },
+        "additionalProperties": true
+      },
+      "WAITLIST_ENTERED": {
+        "type": "object",
+        "required": [
+          "team_id",
+          "session_id",
+          "position"
+        ],
+        "properties": {
+          "team_id": {
+            "description": "见 docs/domain.md"
+          },
+          "session_id": {
+            "description": "见 docs/domain.md"
+          },
+          "position": {
+            "description": "见 docs/domain.md"
+          }
+        },
+        "additionalProperties": true
+      },
+      "WAITLIST_PROMOTED": {
+        "type": "object",
+        "required": [
+          "team_id",
+          "session_id",
+          "reason"
+        ],
+        "properties": {
+          "team_id": {
+            "description": "见 docs/domain.md"
+          },
+          "session_id": {
+            "description": "见 docs/domain.md"
+          },
+          "reason": {
+            "description": "见 docs/domain.md"
+          }
+        },
+        "additionalProperties": true
+      },
+      "ENTRY_SLOT_ASSIGNED": {
+        "type": "object",
+        "required": [
+          "team_id",
+          "session_id",
+          "admit_from",
+          "admit_until"
+        ],
+        "properties": {
+          "team_id": {
+            "description": "见 docs/domain.md"
+          },
+          "session_id": {
+            "description": "见 docs/domain.md"
+          },
+          "admit_from": {
+            "description": "见 docs/domain.md"
+          },
+          "admit_until": {
+            "description": "见 docs/domain.md"
+          }
+        },
+        "additionalProperties": true
+      },
+      "ENTRY_SLOT_RESCHEDULED": {
+        "type": "object",
+        "required": [
+          "team_id",
+          "session_id",
+          "admit_from",
+          "admit_until",
+          "reason"
+        ],
+        "properties": {
+          "team_id": {
+            "description": "见 docs/domain.md"
+          },
+          "session_id": {
+            "description": "见 docs/domain.md"
+          },
+          "admit_from": {
+            "description": "见 docs/domain.md"
+          },
+          "admit_until": {
+            "description": "见 docs/domain.md"
+          },
+          "reason": {
+            "description": "见 docs/domain.md"
+          }
+        },
+        "additionalProperties": true
+      },
+      "CHECKIN_SCANNED": {
+        "type": "object",
+        "required": [
+          "scan_id",
+          "session_id",
+          "zone_id",
+          "team_id",
+          "member_id",
+          "scanned_at",
+          "scanner_id",
+          "offline",
+          "client_record_id"
+        ],
+        "properties": {
+          "scan_id": {
+            "description": "见 docs/domain.md"
+          },
+          "session_id": {
+            "description": "见 docs/domain.md"
+          },
+          "zone_id": {
+            "description": "见 docs/domain.md"
+          },
+          "team_id": {
+            "description": "见 docs/domain.md"
+          },
+          "member_id": {
+            "description": "见 docs/domain.md"
+          },
+          "scanned_at": {
+            "description": "见 docs/domain.md"
+          },
+          "scanner_id": {
+            "description": "见 docs/domain.md"
+          },
+          "offline": {
+            "description": "见 docs/domain.md"
+          },
+          "client_record_id": {
+            "description": "见 docs/domain.md"
+          }
+        },
+        "additionalProperties": true
+      },
+      "CHECKIN_DEDUP_REJECTED": {
+        "type": "object",
+        "required": [
+          "client_record_id",
+          "session_id",
+          "reason"
+        ],
+        "properties": {
+          "client_record_id": {
+            "description": "见 docs/domain.md"
+          },
+          "session_id": {
+            "description": "见 docs/domain.md"
+          },
+          "reason": {
+            "description": "见 docs/domain.md"
+          }
+        },
+        "additionalProperties": true
+      },
+      "OFFLINE_BATCH_SYNCED": {
+        "type": "object",
+        "required": [
+          "batch_id",
+          "scanner_id",
+          "records"
+        ],
+        "properties": {
+          "batch_id": {
+            "description": "见 docs/domain.md"
+          },
+          "scanner_id": {
+            "description": "见 docs/domain.md"
+          },
+          "records": {
+            "description": "见 docs/domain.md"
+          }
+        },
+        "additionalProperties": true
+      },
+      "LATE_ARRIVAL_MARKED": {
+        "type": "object",
+        "required": [
+          "team_id",
+          "session_id",
+          "marked_at"
+        ],
+        "properties": {
+          "team_id": {
+            "description": "见 docs/domain.md"
+          },
+          "session_id": {
+            "description": "见 docs/domain.md"
+          },
+          "marked_at": {
+            "description": "见 docs/domain.md"
+          }
+        },
+        "additionalProperties": true
+      },
+      "TEAM_CANCELLED": {
+        "type": "object",
+        "required": [
+          "team_id",
+          "session_id",
+          "cancelled_at",
+          "had_checked_in"
+        ],
+        "properties": {
+          "team_id": {
+            "description": "见 docs/domain.md"
+          },
+          "session_id": {
+            "description": "见 docs/domain.md"
+          },
+          "cancelled_at": {
+            "description": "见 docs/domain.md"
+          },
+          "had_checked_in": {
+            "description": "见 docs/domain.md"
+          }
+        },
+        "additionalProperties": true
+      },
+      "SLOT_FORFEITED": {
+        "type": "object",
+        "required": [
+          "team_id",
+          "session_id",
+          "forfeit_at",
+          "reason"
+        ],
+        "properties": {
+          "team_id": {
+            "description": "见 docs/domain.md"
+          },
+          "session_id": {
+            "description": "见 docs/domain.md"
+          },
+          "forfeit_at": {
+            "description": "见 docs/domain.md"
+          },
+          "reason": {
+            "description": "见 docs/domain.md"
+          }
+        },
+        "additionalProperties": true
+      },
+      "BRACKET_BUILT": {
+        "type": "object",
+        "required": [
+          "session_id",
+          "groups"
+        ],
+        "properties": {
+          "session_id": {
+            "description": "见 docs/domain.md"
+          },
+          "groups": {
+            "description": "见 docs/domain.md"
+          }
+        },
+        "additionalProperties": true
+      },
+      "HEAT_CALLED": {
+        "type": "object",
+        "required": [
+          "session_id",
+          "group_id",
+          "called_at"
+        ],
+        "properties": {
+          "session_id": {
+            "description": "见 docs/domain.md"
+          },
+          "group_id": {
+            "description": "见 docs/domain.md"
+          },
+          "called_at": {
+            "description": "见 docs/domain.md"
+          }
+        },
+        "additionalProperties": true
+      },
+      "MATCH_RESULT_RECORDED": {
+        "type": "object",
+        "required": [
+          "match_id",
+          "session_id",
+          "group_id",
+          "referee_id",
+          "rankings",
+          "recorded_at"
+        ],
+        "properties": {
+          "match_id": {
+            "description": "见 docs/domain.md"
+          },
+          "session_id": {
+            "description": "见 docs/domain.md"
+          },
+          "group_id": {
+            "description": "见 docs/domain.md"
+          },
+          "referee_id": {
+            "description": "见 docs/domain.md"
+          },
+          "rankings": {
+            "description": "见 docs/domain.md"
+          },
+          "recorded_at": {
+            "description": "见 docs/domain.md"
+          }
+        },
+        "additionalProperties": true
+      },
+      "RESULT_AMENDED": {
+        "type": "object",
+        "required": [
+          "match_id",
+          "amendment_id",
+          "referee_id",
+          "rankings",
+          "reason",
+          "amended_at"
+        ],
+        "properties": {
+          "match_id": {
+            "description": "见 docs/domain.md"
+          },
+          "amendment_id": {
+            "description": "见 docs/domain.md"
+          },
+          "referee_id": {
+            "description": "见 docs/domain.md"
+          },
+          "rankings": {
+            "description": "见 docs/domain.md"
+          },
+          "reason": {
+            "description": "见 docs/domain.md"
+          },
+          "amended_at": {
+            "description": "见 docs/domain.md"
+          }
+        },
+        "additionalProperties": true
+      },
+      "PRIZE_DEFINED": {
+        "type": "object",
+        "required": [
+          "prize_id",
+          "session_id",
+          "basis",
+          "description"
+        ],
+        "properties": {
+          "prize_id": {
+            "description": "见 docs/domain.md"
+          },
+          "session_id": {
+            "description": "见 docs/domain.md"
+          },
+          "basis": {
+            "description": "见 docs/domain.md"
+          },
+          "description": {
+            "description": "见 docs/domain.md"
+          }
+        },
+        "additionalProperties": true
+      },
+      "PRIZE_AWARDED": {
+        "type": "object",
+        "required": [
+          "prize_id",
+          "team_id",
+          "awarded_by",
+          "awarded_at"
+        ],
+        "properties": {
+          "prize_id": {
+            "description": "见 docs/domain.md"
+          },
+          "team_id": {
+            "description": "见 docs/domain.md"
+          },
+          "awarded_by": {
+            "description": "见 docs/domain.md"
+          },
+          "awarded_at": {
+            "description": "见 docs/domain.md"
+          }
+        },
+        "additionalProperties": true
+      },
+      "MERCHANT_TASK_ASSIGNED": {
+        "type": "object",
+        "required": [
+          "task_id",
+          "merchant_id",
+          "zone_id",
+          "kind",
+          "window_start",
+          "window_end"
+        ],
+        "properties": {
+          "task_id": {
+            "description": "见 docs/domain.md"
+          },
+          "merchant_id": {
+            "description": "见 docs/domain.md"
+          },
+          "zone_id": {
+            "description": "见 docs/domain.md"
+          },
+          "kind": {
+            "description": "见 docs/domain.md"
+          },
+          "window_start": {
+            "description": "见 docs/domain.md"
+          },
+          "window_end": {
+            "description": "见 docs/domain.md"
+          }
+        },
+        "additionalProperties": true
+      },
+      "MERCHANT_TASK_CONFIRMED": {
+        "type": "object",
+        "required": [
+          "task_id",
+          "merchant_id",
+          "handled_by"
+        ],
+        "properties": {
+          "task_id": {
+            "description": "见 docs/domain.md"
+          },
+          "merchant_id": {
+            "description": "见 docs/domain.md"
+          },
+          "handled_by": {
+            "description": "见 docs/domain.md"
+          }
+        },
+        "additionalProperties": true
+      },
+      "QUEUE_NOTICE_PUBLISHED": {
+        "type": "object",
+        "required": [
+          "zone_id",
+          "expected_wait_minutes",
+          "observed_at"
+        ],
+        "properties": {
+          "zone_id": {
+            "description": "见 docs/domain.md"
+          },
+          "expected_wait_minutes": {
+            "description": "见 docs/domain.md"
+          },
+          "observed_at": {
+            "description": "见 docs/domain.md"
+          }
+        },
+        "additionalProperties": true
+      },
+      "SESSION_CHANGE_PUBLISHED": {
+        "type": "object",
+        "required": [
+          "session_id",
+          "change_type",
+          "message",
+          "visible_at"
+        ],
+        "properties": {
+          "session_id": {
+            "description": "见 docs/domain.md"
+          },
+          "change_type": {
+            "description": "见 docs/domain.md"
+          },
+          "message": {
+            "description": "见 docs/domain.md"
+          },
+          "visible_at": {
+            "description": "见 docs/domain.md"
+          }
+        },
+        "additionalProperties": true
+      },
+      "CROWD_OBSERVED": {
+        "type": "object",
+        "required": [
+          "zone_id",
+          "observed_at",
+          "competitors_present",
+          "spectators_present",
+          "queue_length",
+          "source"
+        ],
+        "properties": {
+          "zone_id": {
+            "description": "见 docs/domain.md"
+          },
+          "observed_at": {
+            "description": "见 docs/domain.md"
+          },
+          "competitors_present": {
+            "description": "见 docs/domain.md"
+          },
+          "spectators_present": {
+            "description": "见 docs/domain.md"
+          },
+          "queue_length": {
+            "description": "见 docs/domain.md"
+          },
+          "source": {
+            "description": "见 docs/domain.md"
+          }
+        },
+        "additionalProperties": true
+      },
+      "CROWD_THRESHOLD_CROSSED": {
+        "type": "object",
+        "required": [
+          "zone_id",
+          "metric",
+          "observed_value",
+          "threshold",
+          "direction",
+          "observed_at"
+        ],
+        "properties": {
+          "zone_id": {
+            "description": "见 docs/domain.md"
+          },
+          "metric": {
+            "description": "见 docs/domain.md"
+          },
+          "observed_value": {
+            "description": "见 docs/domain.md"
+          },
+          "threshold": {
+            "description": "见 docs/domain.md"
+          },
+          "direction": {
+            "description": "见 docs/domain.md"
+          },
+          "observed_at": {
+            "description": "见 docs/domain.md"
+          }
+        },
+        "additionalProperties": true
+      },
+      "ZONE_ENTRY_OBSERVED": {
+        "type": "object",
+        "required": [
+          "zone_id",
+          "member_id",
+          "audience",
+          "observed_at"
+        ],
+        "properties": {
+          "zone_id": {
+            "description": "见 docs/domain.md"
+          },
+          "member_id": {
+            "description": "见 docs/domain.md"
+          },
+          "audience": {
+            "description": "见 docs/domain.md"
+          },
+          "observed_at": {
+            "description": "见 docs/domain.md"
+          }
+        },
+        "additionalProperties": true
+      },
+      "ZONE_EXIT_OBSERVED": {
+        "type": "object",
+        "required": [
+          "zone_id",
+          "member_id",
+          "audience",
+          "observed_at"
+        ],
+        "properties": {
+          "zone_id": {
+            "description": "见 docs/domain.md"
+          },
+          "member_id": {
+            "description": "见 docs/domain.md"
+          },
+          "audience": {
+            "description": "见 docs/domain.md"
+          },
+          "observed_at": {
+            "description": "见 docs/domain.md"
+          }
+        },
+        "additionalProperties": true
+      },
+      "AREA_SUSPENSION_STARTED": {
+        "type": "object",
+        "required": [
+          "suspension_id",
+          "zone_ids",
+          "reason",
+          "issued_by",
+          "started_at"
+        ],
+        "properties": {
+          "suspension_id": {
+            "description": "见 docs/domain.md"
+          },
+          "zone_ids": {
+            "description": "见 docs/domain.md"
+          },
+          "reason": {
+            "description": "见 docs/domain.md"
+          },
+          "issued_by": {
+            "description": "见 docs/domain.md"
+          },
+          "started_at": {
+            "description": "见 docs/domain.md"
+          }
+        },
+        "additionalProperties": true
+      },
+      "SUSPENSION_ARRANGEMENT_ISSUED": {
+        "type": "object",
+        "required": [
+          "suspension_id",
+          "team_ids",
+          "action",
+          "instruction",
+          "issued_at"
+        ],
+        "properties": {
+          "suspension_id": {
+            "description": "见 docs/domain.md"
+          },
+          "team_ids": {
+            "description": "见 docs/domain.md"
+          },
+          "action": {
+            "description": "见 docs/domain.md"
+          },
+          "instruction": {
+            "description": "见 docs/domain.md"
+          },
+          "issued_at": {
+            "description": "见 docs/domain.md"
+          }
+        },
+        "additionalProperties": true
+      },
+      "AREA_SUSPENSION_LIFTED": {
+        "type": "object",
+        "required": [
+          "suspension_id",
+          "ended_at"
+        ],
+        "properties": {
+          "suspension_id": {
+            "description": "见 docs/domain.md"
+          },
+          "ended_at": {
+            "description": "见 docs/domain.md"
+          }
+        },
+        "additionalProperties": true
+      },
+      "INCIDENT_REPORTED": {
+        "type": "object",
+        "required": [
+          "incident_id",
+          "zone_id",
+          "kind",
+          "severity",
+          "reported_by",
+          "reported_at"
+        ],
+        "properties": {
+          "incident_id": {
+            "description": "见 docs/domain.md"
+          },
+          "zone_id": {
+            "description": "见 docs/domain.md"
+          },
+          "kind": {
+            "description": "见 docs/domain.md"
+          },
+          "severity": {
+            "description": "见 docs/domain.md"
+          },
+          "reported_by": {
+            "description": "见 docs/domain.md"
+          },
+          "reported_at": {
+            "description": "见 docs/domain.md"
+          }
+        },
+        "additionalProperties": true
+      },
+      "RESPONDER_ASSIGNED": {
+        "type": "object",
+        "required": [
+          "incident_id",
+          "responder_id",
+          "role",
+          "assigned_at"
+        ],
+        "properties": {
+          "incident_id": {
+            "description": "见 docs/domain.md"
+          },
+          "responder_id": {
+            "description": "见 docs/domain.md"
+          },
+          "role": {
+            "description": "见 docs/domain.md"
+          },
+          "assigned_at": {
+            "description": "见 docs/domain.md"
+          }
+        },
+        "additionalProperties": true
+      },
+      "MINOR_REUNITED": {
+        "type": "object",
+        "required": [
+          "incident_id",
+          "member_id",
+          "guardian_id",
+          "verified_by",
+          "at"
+        ],
+        "properties": {
+          "incident_id": {
+            "description": "见 docs/domain.md"
+          },
+          "member_id": {
+            "description": "见 docs/domain.md"
+          },
+          "guardian_id": {
+            "description": "见 docs/domain.md"
+          },
+          "verified_by": {
+            "description": "见 docs/domain.md"
+          },
+          "at": {
+            "description": "见 docs/domain.md"
+          }
+        },
+        "additionalProperties": true
+      },
+      "INCIDENT_STATUS_CHANGED": {
+        "type": "object",
+        "required": [
+          "incident_id",
+          "status",
+          "at"
+        ],
+        "properties": {
+          "incident_id": {
+            "description": "见 docs/domain.md"
+          },
+          "status": {
+            "description": "见 docs/domain.md"
+          },
+          "at": {
+            "description": "见 docs/domain.md"
+          }
+        },
+        "additionalProperties": true
+      },
+      "INCIDENT_RESOLVED": {
+        "type": "object",
+        "required": [
+          "incident_id",
+          "resolution",
+          "resolved_at"
+        ],
+        "properties": {
+          "incident_id": {
+            "description": "见 docs/domain.md"
+          },
+          "resolution": {
+            "description": "见 docs/domain.md"
+          },
+          "resolved_at": {
+            "description": "见 docs/domain.md"
+          }
+        },
+        "additionalProperties": true
+      },
+      "MEDIA_CONSENT_GRANTED": {
+        "type": "object",
+        "required": [
+          "consent_id",
+          "member_id",
+          "scope",
+          "granted_by",
+          "granted_at"
+        ],
+        "properties": {
+          "consent_id": {
+            "description": "见 docs/domain.md"
+          },
+          "member_id": {
+            "description": "见 docs/domain.md"
+          },
+          "scope": {
+            "description": "见 docs/domain.md"
+          },
+          "granted_by": {
+            "description": "见 docs/domain.md"
+          },
+          "granted_at": {
+            "description": "见 docs/domain.md"
+          }
+        },
+        "additionalProperties": true
+      },
+      "MEDIA_CONSENT_WITHDRAWN": {
+        "type": "object",
+        "required": [
+          "consent_id",
+          "member_id",
+          "withdrawn_at"
+        ],
+        "properties": {
+          "consent_id": {
+            "description": "见 docs/domain.md"
+          },
+          "member_id": {
+            "description": "见 docs/domain.md"
+          },
+          "withdrawn_at": {
+            "description": "见 docs/domain.md"
+          }
+        },
+        "additionalProperties": true
+      },
+      "MEDIA_ASSET_CAPTURED": {
+        "type": "object",
+        "required": [
+          "asset_id",
+          "zone_id",
+          "captured_at",
+          "consent_ids",
+          "incident_id",
+          "sensitive"
+        ],
+        "properties": {
+          "asset_id": {
+            "description": "见 docs/domain.md"
+          },
+          "zone_id": {
+            "description": "见 docs/domain.md"
+          },
+          "captured_at": {
+            "description": "见 docs/domain.md"
+          },
+          "consent_ids": {
+            "description": "见 docs/domain.md"
+          },
+          "incident_id": {
+            "description": "见 docs/domain.md"
+          },
+          "sensitive": {
+            "description": "见 docs/domain.md"
+          }
+        },
+        "additionalProperties": true
+      },
+      "ASSET_ACCESS_GRANTED": {
+        "type": "object",
+        "required": [
+          "asset_id",
+          "incident_id",
+          "responder_id",
+          "purpose",
+          "granted_at",
+          "expires_at"
+        ],
+        "properties": {
+          "asset_id": {
+            "description": "见 docs/domain.md"
+          },
+          "incident_id": {
+            "description": "见 docs/domain.md"
+          },
+          "responder_id": {
+            "description": "见 docs/domain.md"
+          },
+          "purpose": {
+            "description": "见 docs/domain.md"
+          },
+          "granted_at": {
+            "description": "见 docs/domain.md"
+          },
+          "expires_at": {
+            "description": "见 docs/domain.md"
+          }
+        },
+        "additionalProperties": true
+      },
+      "ASSET_ACCESS_REVOKED": {
+        "type": "object",
+        "required": [
+          "asset_id",
+          "responder_id",
+          "revoked_at"
+        ],
+        "properties": {
+          "asset_id": {
+            "description": "见 docs/domain.md"
+          },
+          "responder_id": {
+            "description": "见 docs/domain.md"
+          },
+          "revoked_at": {
+            "description": "见 docs/domain.md"
+          }
+        },
+        "additionalProperties": true
+      },
+      "MEDIA_RELEASE_REQUESTED": {
+        "type": "object",
+        "required": [
+          "request_id",
+          "asset_id",
+          "channel",
+          "requested_by",
+          "requested_at"
+        ],
+        "properties": {
+          "request_id": {
+            "description": "见 docs/domain.md"
+          },
+          "asset_id": {
+            "description": "见 docs/domain.md"
+          },
+          "channel": {
+            "description": "见 docs/domain.md"
+          },
+          "requested_by": {
+            "description": "见 docs/domain.md"
+          },
+          "requested_at": {
+            "description": "见 docs/domain.md"
+          }
+        },
+        "additionalProperties": true
+      },
+      "MEDIA_RELEASE_DECIDED": {
+        "type": "object",
+        "required": [
+          "request_id",
+          "decision",
+          "decided_by",
+          "decided_at",
+          "reason"
+        ],
+        "properties": {
+          "request_id": {
+            "description": "见 docs/domain.md"
+          },
+          "decision": {
+            "description": "见 docs/domain.md"
+          },
+          "decided_by": {
+            "description": "见 docs/domain.md"
+          },
+          "decided_at": {
+            "description": "见 docs/domain.md"
+          },
+          "reason": {
+            "description": "见 docs/domain.md"
+          }
+        },
+        "additionalProperties": true
+      },
+      "READINESS_CHECK_STARTED": {
+        "type": "object",
+        "required": [
+          "session_id",
+          "started_at"
+        ],
+        "properties": {
+          "session_id": {
+            "description": "见 docs/domain.md"
+          },
+          "started_at": {
+            "description": "见 docs/domain.md"
+          }
+        },
+        "additionalProperties": true
+      },
+      "READINESS_ITEM_CONFIRMED": {
+        "type": "object",
+        "required": [
+          "session_id",
+          "area",
+          "item",
+          "confirmed_by",
+          "confirmed_at"
+        ],
+        "properties": {
+          "session_id": {
+            "description": "见 docs/domain.md"
+          },
+          "area": {
+            "description": "见 docs/domain.md"
+          },
+          "item": {
+            "description": "见 docs/domain.md"
+          },
+          "confirmed_by": {
+            "description": "见 docs/domain.md"
+          },
+          "confirmed_at": {
+            "description": "见 docs/domain.md"
+          }
+        },
+        "additionalProperties": true
+      },
+      "PLAN_FROZEN": {
+        "type": "object",
+        "required": [
+          "frozen_at"
+        ],
+        "properties": {
+          "frozen_at": {
+            "description": "见 docs/domain.md"
+          }
+        },
+        "additionalProperties": true
+      },
+      "PLAN_UNFROZEN": {
+        "type": "object",
+        "required": [
+          "reason",
+          "unfrozen_at"
+        ],
+        "properties": {
+          "reason": {
+            "description": "见 docs/domain.md"
+          },
+          "unfrozen_at": {
+            "description": "见 docs/domain.md"
+          }
+        },
+        "additionalProperties": true
+      }
+    },
+    "post_freeze_allowed": [
+      "AREA_SUSPENSION_LIFTED",
+      "AREA_SUSPENSION_STARTED",
+      "ASSET_ACCESS_GRANTED",
+      "ASSET_ACCESS_REVOKED",
+      "BRACKET_BUILT",
+      "CHECKIN_DEDUP_REJECTED",
+      "CHECKIN_SCANNED",
+      "CROWD_OBSERVED",
+      "CROWD_THRESHOLD_CROSSED",
+      "ENTRY_SLOT_RESCHEDULED",
+      "HEAT_CALLED",
+      "INCIDENT_REPORTED",
+      "INCIDENT_RESOLVED",
+      "INCIDENT_STATUS_CHANGED",
+      "LATE_ARRIVAL_MARKED",
+      "MATCH_RESULT_RECORDED",
+      "MEDIA_ASSET_CAPTURED",
+      "MEDIA_CONSENT_GRANTED",
+      "MEDIA_CONSENT_WITHDRAWN",
+      "MEDIA_RELEASE_DECIDED",
+      "MEDIA_RELEASE_REQUESTED",
+      "MERCHANT_TASK_ASSIGNED",
+      "MERCHANT_TASK_CONFIRMED",
+      "MINOR_REUNITED",
+      "OFFLINE_BATCH_SYNCED",
+      "PLAN_UNFROZEN",
+      "PRIZE_AWARDED",
+      "PRIZE_DEFINED",
+      "QUEUE_NOTICE_PUBLISHED",
+      "READINESS_ITEM_CONFIRMED",
+      "RESPONDER_ASSIGNED",
+      "RESULT_AMENDED",
+      "SESSION_CHANGE_PUBLISHED",
+      "SLOT_FORFEITED",
+      "SUSPENSION_ARRANGEMENT_ISSUED",
+      "TEAM_CANCELLED",
+      "WAITLIST_PROMOTED",
+      "ZONE_ENTRY_OBSERVED",
+      "ZONE_EXIT_OBSERVED"
+    ]
+  }
+}
